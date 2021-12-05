@@ -31,7 +31,7 @@
                 },
                 {
                     "name": "Melee",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "4cbc000d-ea8b-4669-a280-7c6b04d0f48c",
                     "expectedControlType": "Button",
                     "processors": "",
