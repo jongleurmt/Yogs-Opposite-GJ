@@ -36,6 +36,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "138e0cdc-2ccd-4e83-af44-38462351e3e3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
@@ -173,17 +181,6 @@
                 },
                 {
                     "name": "",
-                    "id": "02d74e96-cbc0-448d-af23-ca66c17d5962",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Interact",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "1a0a0a8c-5d47-456f-9f40-99bd6db05e12",
                     "path": "<Keyboard>/e",
                     "interactions": "",
@@ -217,8 +214,19 @@
                 },
                 {
                     "name": "",
-                    "id": "bf4923d3-2174-4fe6-bed7-c4fa3897d123",
-                    "path": "<Keyboard>/space",
+                    "id": "75ff9b24-ee65-4188-ab71-71c215868d04",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Throw",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c9d7eac6-51d5-42a5-8fa7-36310a522fd0",
+                    "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -267,6 +275,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Melee",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3a20df44-61bd-4dcc-9b7b-873b542a3f8c",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bf4923d3-2174-4fe6-bed7-c4fa3897d123",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
