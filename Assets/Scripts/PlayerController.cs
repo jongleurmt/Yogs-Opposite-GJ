@@ -23,9 +23,6 @@ public class PlayerController : PlayerControllerBase
     [SerializeField]
     private float m_DescentDrag = -1.5f;
 
-    [SerializeField]
-    private float m_KnockbackForce = 100f;
-
     [Header("Links")]
     [SerializeField]
     private Animator m_MeleeAnimator = null;
