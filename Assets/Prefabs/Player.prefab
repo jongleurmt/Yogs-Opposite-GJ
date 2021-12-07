@@ -435,7 +435,6 @@ MonoBehaviour:
   m_RotationSpeed: 25
   m_JumpForce: 750
   m_DescentDrag: -5
-  m_KnockbackForce: 1000
   m_MeleeAnimator: {fileID: 485660216280320194}
 --- !u!54 &485660216695314574
 Rigidbody:

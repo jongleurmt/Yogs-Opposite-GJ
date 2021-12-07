@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody), typeof(PlayerModel))]
 public class PlayerController : PlayerControllerBase
 {
     [Header("Testing")]
@@ -42,6 +42,9 @@ public class PlayerController : PlayerControllerBase
     // The rigidbody component.
     private Rigidbody m_Rigidbody = null;
 
+    // The player model component.
+    private PlayerModel m_Model = null;
+
     // The default drag.
     private float m_DefaultDrag = 0f;
 
@@ -50,8 +53,9 @@ public class PlayerController : PlayerControllerBase
     /// </summary>
     void Awake()
     {
-        m_Rigidbody = GetComponent<Rigidbody>();
         m_MeshRenderers = GetComponentsInChildren<MeshRenderer>();
+        m_Rigidbody = GetComponent<Rigidbody>();
+        m_Model = GetComponent<PlayerModel>();
 
         m_DefaultDrag = m_Rigidbody.drag;
     }
@@ -91,7 +95,9 @@ public class PlayerController : PlayerControllerBase
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
             m_IsGrounded = true;
+        }
         else if (collision.gameObject.CompareTag("MeleeArm"))
         {
             if (collision.contactCount == 0) return;
