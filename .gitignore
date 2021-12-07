@@ -8,7 +8,6 @@
 /[Bb]uild/
 /[Bb]uilds/
 /[Rr]ecordings/
-/[Ll]ogs/
 /[Mm]emoryCaptures/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
@@ -43,7 +42,6 @@ ExportedObj/
 *.mdb
 *.opendb
 *.VC.db
-*.log
 
 # Unity3D generated meta files
 *.pidb.meta
