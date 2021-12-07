@@ -13,19 +13,27 @@ public class ObjectEffect : MonoBehaviour
     public WeightValue Weight;
     public int Force;
 
-    public int health;
+    public int Health;
+
+    public int ptsOnBrake, pts1stPlayerHit, pts2ndPlayerHit;
 
     private Collider[] _coll;
     private Rigidbody _rb;
 
     [SerializeField]
-    private bool held = false;
+    private bool held = false, thrown = false;
+
     private void Awake()
     {
         _coll = GetComponentsInChildren<Collider>();
         _rb = GetComponent<Rigidbody>();
 
         // add 1 to items amount in game manager
+    }
+
+    public void OnInteract()
+    {
+        PickUp(transform);
     }
 
     public void PickUp(Transform hands)
@@ -48,7 +56,6 @@ public class ObjectEffect : MonoBehaviour
 
     public void Throw()
     {
-
         foreach (var parts in _coll)
         {
             parts.enabled = true;
@@ -59,6 +66,8 @@ public class ObjectEffect : MonoBehaviour
         //add force
         Vector3 v3Force = (Force * transform.forward) + (Force * transform.up);
         _rb.velocity = v3Force;
+
+        thrown = true;
     }
 
     private void OnCollisionEnter(Collision coll)
@@ -67,17 +76,34 @@ public class ObjectEffect : MonoBehaviour
 
         if(held)
         {
-            //put the code below here else object will be destroyed when spawning
-            foreach (var child in children)
-            {
-                child.AddComponent<Rigidbody>();
-                child.transform.parent = null;
+            Health--;
 
-                Destroy(child, 2f);
+            if(coll.collider.tag == "player")
+            {
+                //reduse points from other player and add to the player that trew this objec
             }
 
-            // subtrect 1 to items amount in game manager
-            Destroy(this.gameObject, 1f);
-        }        
+            if(Health <= 0)
+            {
+                //put the code below here else object will be destroyed when spawning
+                foreach (var child in children)
+                {
+                    child.AddComponent<Rigidbody>();
+                    child.transform.parent = null;
+
+                    Destroy(child, 2f);
+                }
+
+                // subtrect 1 to items amount in game manager
+                Destroy(this.gameObject, 1f);
+            }
+
+        }
+
+        if (thrown)
+        {
+            held = false;
+            thrown = false;
+        }
     }
 }
