@@ -32,19 +32,19 @@ public abstract class PlayerControllerBase : MonoBehaviour
             Direction(context.ReadValue<Vector2>());
         
         // The interact action.
-        else if (context.action.Equals(m_InteractAction) && !context.performed)
+        else if (context.action.Equals(m_InteractAction) && context.performed)
             Interact();
 
         // The jump action.
-        else if (context.action.Equals(m_JumpAction) && !context.performed)
+        else if (context.action.Equals(m_JumpAction) && context.performed)
             Jump();
 
         // The melee action.
-        else if (context.action.Equals(m_MeleeAction) && !context.performed && !context.canceled)
+        else if (context.action.Equals(m_MeleeAction) && context.performed)
             Melee();
             
         // The throw action.
-        else if (context.action.Equals(m_ThrowAction) && !context.performed)
+        else if (context.action.Equals(m_ThrowAction) && context.performed)
             Throw();
     }
 

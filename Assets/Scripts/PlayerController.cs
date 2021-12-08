@@ -23,9 +23,17 @@ public class PlayerController : PlayerControllerBase
     [SerializeField]
     private float m_DescentDrag = -1.5f;
 
-    [Header("Links")]
+    [Header("References")]
+    [SerializeField]
+    private Transform m_Hands = null;
+    
+    [SerializeField]
+    private Collider m_BoxCastCollider = null;
+
     [SerializeField]
     private Animator m_MeleeAnimator = null;
+
+    private ObjectEffect m_ObjectHeld = null;
 
     // The mesh renderer components.
     private MeshRenderer[] m_MeshRenderers = {};
@@ -124,6 +132,31 @@ public class PlayerController : PlayerControllerBase
         m_Direction = new Vector3(value.x, 0, value.y);
     }
 
+    // Interact handler.
+    protected override void Interact()
+    {
+        if (m_ObjectHeld == null)
+        {
+            Vector3 halfExtents = m_BoxCastCollider.bounds.extents;
+            float distance = Vector3.Distance(transform.position, m_BoxCastCollider.transform.position);
+            RaycastHit hit;
+
+            if (Physics.BoxCast(transform.position, halfExtents, transform.forward, out hit, Quaternion.identity, distance, 1 << LayerMask.NameToLayer("Object")))
+            {
+                ObjectEffect oe = hit.collider.GetComponent<ObjectEffect>();
+                if (oe != null)
+                {
+                    oe.PickUp(m_Hands);
+                    m_ObjectHeld = oe;
+                }
+            }
+        }
+        else
+        {
+            // TODO: Drop object.
+        }
+    }
+
     // Jump handler.
     protected override void Jump()
     {
@@ -137,6 +170,15 @@ public class PlayerController : PlayerControllerBase
         if (m_MeleeAnimator == null) return;
         m_MeleeAnimator.SetBool("MeleeAlternate", !m_MeleeAnimator.GetBool("MeleeAlternate"));
         m_MeleeAnimator.SetTrigger("Melee");
+    }
+
+    // Throw handler.
+    protected override void Throw()
+    {
+        if (m_ObjectHeld == null) return;
+
+        m_ObjectHeld.Throw();
+        m_ObjectHeld = null;
     }
 
     // Temporary invincibility.

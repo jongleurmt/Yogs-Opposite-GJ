@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8220206498656943267}
   - component: {fileID: 8220206498656943266}
   - component: {fileID: 8220206498656943269}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 8220206498772425743}
   - component: {fileID: 8220206498772425742}
   - component: {fileID: 8220206498772425777}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 8220206499471448660}
   - component: {fileID: 8220206499471448663}
   - component: {fileID: 8220206499471448662}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: 8220206499907988842}
   - component: {fileID: 8220206499907988845}
   - component: {fileID: 8220206499907988844}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 8220206499935884939}
   - component: {fileID: 8220206499935884938}
   - component: {fileID: 8220206499935884941}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -487,7 +487,7 @@ GameObject:
   - component: {fileID: 8220206499972326155}
   - component: {fileID: 8220206499972326154}
   - component: {fileID: 8220206499972326157}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -582,7 +582,7 @@ GameObject:
   - component: {fileID: 8220206499983914466}
   - component: {fileID: 8220206499983914469}
   - component: {fileID: 8220206499983914464}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -645,8 +645,15 @@ MonoBehaviour:
   - {fileID: 8220206499972326159}
   - {fileID: 8220206499935884943}
   - {fileID: 8220206499471448664}
-  damageValue: 0
-  heavyValue: 0
+  Damage: 0
+  Weight: 0
+  Force: 0
+  Health: 0
+  ptsOnBrake: 0
+  pts1stPlayerHit: 0
+  pts2ndPlayerHit: 0
+  held: 0
+  thrown: 0
 --- !u!54 &8220206499983914464
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -675,7 +682,7 @@ GameObject:
   - component: {fileID: 8220206500368709193}
   - component: {fileID: 8220206500368709192}
   - component: {fileID: 8220206500368709195}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -770,7 +777,7 @@ GameObject:
   - component: {fileID: 8220206500452181280}
   - component: {fileID: 8220206500452181283}
   - component: {fileID: 8220206500452181282}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
