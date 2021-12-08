@@ -30,9 +30,10 @@ public class PlayerController : PlayerControllerBase
     [SerializeField]
     private Collider m_BoxCastCollider = null;
 
-    [SerializeField]
-    private Animator m_MeleeAnimator = null;
+    // The character animator.
+    private Animator m_Animator;
 
+    // The object currently held.
     private ObjectEffect m_ObjectHeld = null;
 
     // The mesh renderer components.
@@ -62,8 +63,10 @@ public class PlayerController : PlayerControllerBase
     void Awake()
     {
         m_MeshRenderers = GetComponentsInChildren<MeshRenderer>();
-        m_Rigidbody = GetComponent<Rigidbody>();
         m_Model = GetComponent<PlayerModel>();
+
+        m_Rigidbody = GetComponent<Rigidbody>();
+        m_Animator = GetComponentInChildren<Animator>();
 
         m_DefaultDrag = m_Rigidbody.drag;
     }
@@ -146,6 +149,7 @@ public class PlayerController : PlayerControllerBase
                 ObjectEffect oe = hit.collider.GetComponent<ObjectEffect>();
                 if (oe != null)
                 {
+                    m_Animator.SetBool("IsHoldingObject", true);
                     oe.PickUp(m_Hands);
                     m_ObjectHeld = oe;
                 }
@@ -167,9 +171,11 @@ public class PlayerController : PlayerControllerBase
     // Melee handler.
     protected override void Melee()
     {
-        if (m_MeleeAnimator == null) return;
-        m_MeleeAnimator.SetBool("MeleeAlternate", !m_MeleeAnimator.GetBool("MeleeAlternate"));
-        m_MeleeAnimator.SetTrigger("Melee");
+        if (m_Animator == null || m_ObjectHeld == null) return;
+        m_Animator.SetTrigger("Melee");
+        // if (m_MeleeAnimator == null) return;
+        // m_MeleeAnimator.SetBool("MeleeAlternate", !m_MeleeAnimator.GetBool("MeleeAlternate"));
+        // m_MeleeAnimator.SetTrigger("Melee");
     }
 
     // Throw handler.
@@ -179,6 +185,7 @@ public class PlayerController : PlayerControllerBase
 
         m_ObjectHeld.Throw();
         m_ObjectHeld = null;
+        m_Animator.SetBool("IsHoldingObject", false);
     }
 
     // Temporary invincibility.
