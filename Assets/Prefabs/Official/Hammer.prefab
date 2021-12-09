@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4165579806364960862}
   - component: {fileID: 5516354433294236321}
   - component: {fileID: 224050651571791315}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hammer_handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 578650476731903240}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hammer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 1745445470831350189}
   - component: {fileID: 1637259497176313926}
   - component: {fileID: 1905249502431662433}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hammer_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,9 +234,9 @@ GameObject:
   - component: {fileID: 6230512973902492257}
   - component: {fileID: 6230512973902492256}
   - component: {fileID: 6230512973902492259}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hammer
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -250,7 +250,7 @@ Transform:
   m_GameObject: {fileID: 6230512973902492258}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children:
   - {fileID: 578650476731903240}
   m_Father: {fileID: 0}
@@ -302,9 +302,6 @@ MonoBehaviour:
   - {fileID: 1905249502431662432}
   Damage: 2
   Weight: 1
-  ForwordForce: 5
-  UpwordForce: 2.5
-  Health: 3
   ptsOnBrake: 40
   pts1stPlayerHit: 20
   pts2ndPlayerHit: 10

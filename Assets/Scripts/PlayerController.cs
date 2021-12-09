@@ -29,6 +29,7 @@ public class PlayerController : PlayerControllerBase
     [Header("References")]
     [SerializeField]
     private Transform m_Hands = null;
+    public Transform Hands => m_Hands;
     
     [SerializeField]
     private Collider m_BoxCastCollider = null;
@@ -56,9 +57,13 @@ public class PlayerController : PlayerControllerBase
 
     // The player model component.
     private PlayerModel m_Model = null;
+    public PlayerModel Model => m_Model;
 
     // The default drag.
     private float m_DefaultDrag = 0f;
+
+    // The list of players triggered.
+    private List<PlayerController> m_PlayerList = new List<PlayerController>();
 
     /// <summary>
     /// Component caching.
@@ -114,17 +119,6 @@ public class PlayerController : PlayerControllerBase
             m_IsGrounded = true;
             m_Animator.SetBool("IsGrounded", m_IsGrounded);
         }
-        else if (collision.gameObject.CompareTag("MeleeArm"))
-        {
-            if (collision.contactCount == 0) return;
-
-            ContactPoint contact = collision.GetContact(0);
-            Vector3 direction = transform.position - contact.point;
-            direction.y = 1f;
-            direction.x *= 10f;
-
-            m_Animator.SetTrigger("Invincibility");
-        }
     }
 
     // Collision detection.
@@ -134,6 +128,26 @@ public class PlayerController : PlayerControllerBase
         {
             m_IsGrounded = false;
             m_Animator.SetBool("IsGrounded", m_IsGrounded);
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            PlayerController controller = other.GetComponent<PlayerController>();
+            if (controller == null) return;
+            m_PlayerList.Add(controller);
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            PlayerController controller = other.GetComponent<PlayerController>();
+            if (controller == null) return;
+            m_PlayerList.Remove(controller);
         }
     }
 
@@ -150,7 +164,7 @@ public class PlayerController : PlayerControllerBase
         if (m_ObjectHeld == null)
         {
             Vector3 halfExtents = m_BoxCastCollider.bounds.extents;
-            float distance = Vector3.Distance(transform.position, m_BoxCastCollider.transform.position);
+            float distance = Vector3.Distance(transform.position, m_BoxCastCollider.transform.position) * 2f;
             RaycastHit hit;
 
             if (Physics.BoxCast(transform.position, halfExtents, transform.forward, out hit, Quaternion.identity, distance, 1 << LayerMask.NameToLayer("Object")))
@@ -159,14 +173,14 @@ public class PlayerController : PlayerControllerBase
                 if (oe != null)
                 {
                     m_Animator.SetBool("IsHoldingObject", true);
-                    oe.PickUp(m_Hands);
+                    oe.PickUp(this);
                     m_ObjectHeld = oe;
                 }
             }
         }
         else
         {
-            // TODO: Drop object.
+            // drop object?
         }
     }
 
@@ -181,10 +195,20 @@ public class PlayerController : PlayerControllerBase
     protected override void Melee()
     {
         if (m_Animator == null || m_ObjectHeld == null) return;
+
+        foreach (PlayerController controller in m_PlayerList)
+        {
+            Model.AddScore(10);
+            controller.StartInvincibility();
+        }
+
+        // Dent the object once for all players hit.
+        if (m_PlayerList.Count > 0)
+        {
+            m_ObjectHeld.Dent(true);
+        }
+
         m_Animator.SetTrigger("Melee");
-        // if (m_MeleeAnimator == null) return;
-        // m_MeleeAnimator.SetBool("MeleeAlternate", !m_MeleeAnimator.GetBool("MeleeAlternate"));
-        // m_MeleeAnimator.SetTrigger("Melee");
     }
 
     // Throw handler.
@@ -193,8 +217,7 @@ public class PlayerController : PlayerControllerBase
         if (m_ObjectHeld == null) return;
 
         m_ObjectHeld.Throw();
-        m_ObjectHeld = null;
-        m_Animator.SetBool("IsHoldingObject", false);
+        Drop();
     }
 
     // Toggles invincibility.
@@ -203,6 +226,9 @@ public class PlayerController : PlayerControllerBase
         m_IsInvincible = value;
         gameObject.layer = LayerMask.NameToLayer(m_IsInvincible ? "InvinciblePlayer" : "Player");
     }
+
+    public void StartInvincibility()
+        => m_Animator.SetTrigger("Invincibility");
 
     // Toggles invincibility ON.
     // Used by the Animator.
@@ -213,4 +239,10 @@ public class PlayerController : PlayerControllerBase
     // Used by the Animator.
     public void DisableInvincibility()
         => SetInvincible(false);
+
+    public void Drop()
+    {
+        m_ObjectHeld = null;
+        m_Animator.SetBool("IsHoldingObject", false);
+    }
 }

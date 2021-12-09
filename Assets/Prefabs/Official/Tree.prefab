@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6014702239316058524}
   - component: {fileID: 8241475576752246494}
   - component: {fileID: 357529628971666626}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree_leaves.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 7117349792886654720}
   - component: {fileID: 2804101583492733199}
   - component: {fileID: 6769137924237259797}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree_ornament.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 5315843657038295418}
   - component: {fileID: 6620109866493140098}
   - component: {fileID: 371325379387764209}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree_ornament.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 4408263035323867776}
   - component: {fileID: 8635717455310952124}
   - component: {fileID: 2211903488028577633}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree_ornament.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 8698723162994722838}
   - component: {fileID: 6323998735269134016}
   - component: {fileID: 3873079918526202861}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree_ornament.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +434,7 @@ GameObject:
   - component: {fileID: 6890677725149150366}
   - component: {fileID: 8007447871751198870}
   - component: {fileID: 5608178852934800285}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree_ornament.018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -515,7 +515,7 @@ GameObject:
   - component: {fileID: 3229380530711374207}
   - component: {fileID: 1117892380639706351}
   - component: {fileID: 5079150067274187271}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree_ornament.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -597,7 +597,7 @@ GameObject:
   - component: {fileID: 3311351288257277392}
   - component: {fileID: 7082994910471994608}
   - component: {fileID: 3425290457740840628}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree_ornament
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -691,7 +691,7 @@ GameObject:
   - component: {fileID: 2086047534593377232}
   - component: {fileID: 736602003883050001}
   - component: {fileID: 8576252923097028164}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree_ornament.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -773,7 +773,7 @@ GameObject:
   - component: {fileID: 8463287122083784101}
   - component: {fileID: 4083479817859276535}
   - component: {fileID: 3670743786403689147}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree_leaves.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -872,7 +872,7 @@ GameObject:
   - component: {fileID: 2310196243213536969}
   - component: {fileID: 1821348240119431626}
   - component: {fileID: 4538679469191107095}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree_ornament.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -953,7 +953,7 @@ GameObject:
   - component: {fileID: 326191801859122725}
   - component: {fileID: 5344500798310651822}
   - component: {fileID: 1495253029048628871}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree_ornament.017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1034,7 +1034,7 @@ GameObject:
   - component: {fileID: 359810355481363513}
   - component: {fileID: 31382634881724868}
   - component: {fileID: 2470444024201153393}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree_ornament.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1115,7 +1115,7 @@ GameObject:
   - component: {fileID: 4196162965216802530}
   - component: {fileID: 2240877884131317633}
   - component: {fileID: 9027881722919919766}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree_ornament.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1196,7 +1196,7 @@ GameObject:
   - component: {fileID: 2531774907569885456}
   - component: {fileID: 5163934297397062140}
   - component: {fileID: 3629560222334185984}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree_ornament.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1277,7 +1277,7 @@ GameObject:
   - component: {fileID: 6765396735335943238}
   - component: {fileID: 8299463815626384765}
   - component: {fileID: 5319251412550558019}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree_ornament.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1358,7 +1358,7 @@ GameObject:
   - component: {fileID: 7253346129862238947}
   - component: {fileID: 3874735166575651349}
   - component: {fileID: 4380797284332306305}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree_ornament.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1439,7 +1439,7 @@ GameObject:
   - component: {fileID: 3059313475282787712}
   - component: {fileID: 7715702842827494067}
   - component: {fileID: 2102279757264847147}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree_ornament.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1520,7 +1520,7 @@ GameObject:
   - component: {fileID: 6876767241851732778}
   - component: {fileID: 6734478806376253687}
   - component: {fileID: 3480871339565721820}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree_ornament.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1602,7 +1602,7 @@ GameObject:
   - component: {fileID: 2639141746275220957}
   - component: {fileID: 7469728980809801397}
   - component: {fileID: 7498646009610687663}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree_leaves.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1701,7 +1701,7 @@ GameObject:
   - component: {fileID: 5233546757984184562}
   - component: {fileID: 5566856034465380143}
   - component: {fileID: 7926491499357302917}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree_leaves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1802,9 +1802,9 @@ GameObject:
   - component: {fileID: 8566273922722744537}
   - component: {fileID: 8566273922722744516}
   - component: {fileID: 8566273922722744519}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1818,7 +1818,7 @@ Transform:
   m_GameObject: {fileID: 8566273922722744536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 9041661677356657086}
   - {fileID: 9097998059076563404}
@@ -1893,9 +1893,6 @@ MonoBehaviour:
   - {fileID: 3425290457740840631}
   Damage: 1
   Weight: 2
-  ForwordForce: 5
-  UpwordForce: 2.5
-  Health: 2
   ptsOnBrake: 0
   pts1stPlayerHit: 0
   pts2ndPlayerHit: 0
@@ -1913,7 +1910,7 @@ GameObject:
   - component: {fileID: 6144613876578372496}
   - component: {fileID: 2407379482548115117}
   - component: {fileID: 8665527598006952078}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree_leaves.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2012,7 +2009,7 @@ GameObject:
   - component: {fileID: 3577903361997225699}
   - component: {fileID: 896684448366604932}
   - component: {fileID: 4819190118087042295}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree_ornament.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2093,7 +2090,7 @@ GameObject:
   - component: {fileID: 2357703546103807472}
   - component: {fileID: 2299679139489467368}
   - component: {fileID: 3555409177664572015}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree_ornament.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}

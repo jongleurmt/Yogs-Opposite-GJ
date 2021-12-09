@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1380158021495500368}
   - component: {fileID: 2632518897049936373}
   - component: {fileID: 246680608342463807}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Screw Driver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,9 +94,9 @@ GameObject:
   - component: {fileID: 1705755864887027459}
   - component: {fileID: 1341237948222220545}
   - component: {fileID: 3471067347979719973}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Screw Driver
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 2215544607736789133}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 7.5, y: 7.5, z: 7.5}
   m_Children:
   - {fileID: 1380158021495500368}
   m_Father: {fileID: 0}
@@ -131,9 +131,6 @@ MonoBehaviour:
   children: []
   Damage: 2
   Weight: 0
-  ForwordForce: 7
-  UpwordForce: 3.5
-  Health: 3
   ptsOnBrake: 40
   pts1stPlayerHit: 20
   pts2ndPlayerHit: 10

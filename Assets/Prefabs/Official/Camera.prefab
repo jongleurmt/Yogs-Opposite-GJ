@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1247795322434211226}
   - component: {fileID: 1247795322434211229}
   - component: {fileID: 1247795322434211228}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1247795322434211231}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 7589570561962852123}
   m_Father: {fileID: 0}
@@ -53,9 +53,6 @@ MonoBehaviour:
   - {fileID: 6297933188552652334}
   Damage: 0
   Weight: 0
-  ForwordForce: 7
-  UpwordForce: 3.5
-  Health: 1
   ptsOnBrake: 20
   pts1stPlayerHit: 10
   pts2ndPlayerHit: 5
@@ -102,7 +99,7 @@ GameObject:
   - component: {fileID: 8007155883901903531}
   - component: {fileID: 7903919634380458845}
   - component: {fileID: 3470110838548945920}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera_button_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,7 +195,7 @@ GameObject:
   - component: {fileID: 1684738009552677221}
   - component: {fileID: 6735555291556091318}
   - component: {fileID: 6297933188552652335}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera_lens
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +292,7 @@ GameObject:
   - component: {fileID: 8028661155411047424}
   - component: {fileID: 1245750111816874844}
   - component: {fileID: 7001140164996442267}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,7 +385,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7589570561962852123}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,7 +422,7 @@ GameObject:
   - component: {fileID: 2736742457072011894}
   - component: {fileID: 8138724974674848910}
   - component: {fileID: 7939924593702096541}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4494478156437091686}
   - component: {fileID: 8253518443743640619}
   - component: {fileID: 3826110944930520710}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Chair_Leg1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164511511445898016}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0.48899996, z: 0}
+  m_LocalPosition: {x: 0, y: 0.235, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 6565724884340629999}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 1615074126105071666}
   - component: {fileID: 6653960001061728815}
   - component: {fileID: 7035883496148319519}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Chair_Leg3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1356982815796620870}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0.48899996, z: 0}
+  m_LocalPosition: {x: 0, y: 0.235, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 6565724884340629999}
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 6406340260614608620}
   - component: {fileID: 7077472635890207765}
   - component: {fileID: 1215808326036481778}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Chair_Leg2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3999350342486161289}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0.48899996, z: 0}
+  m_LocalPosition: {x: 0, y: 0.235, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 6565724884340629999}
@@ -295,12 +295,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6565724884340629999}
   - component: {fileID: 5938105134525119571}
-  - component: {fileID: 2621446516591144269}
   - component: {fileID: 5943035329576972637}
   - component: {fileID: 2754279980476434755}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Chair
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -314,7 +313,7 @@ Transform:
   m_GameObject: {fileID: 4913106763011883869}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children:
   - {fileID: 7877581574459414347}
   - {fileID: 6386934648823236153}
@@ -336,20 +335,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.22, y: 0.2, z: 0.2}
-  m_Center: {x: 0.011, y: 0.35, z: -0.04}
---- !u!65 &2621446516591144269
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4913106763011883869}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2, z: 0.03}
-  m_Center: {x: 0, y: 0.55, z: 0.05}
+  m_Center: {x: 0.011, y: 0.1, z: -0.04}
 --- !u!54 &5943035329576972637
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -386,9 +372,6 @@ MonoBehaviour:
   - {fileID: 8131208793354069720}
   Damage: 0
   Weight: 0
-  ForwordForce: 6
-  UpwordForce: 3
-  Health: 2
   ptsOnBrake: 20
   pts1stPlayerHit: 20
   pts2ndPlayerHit: 10
@@ -406,7 +389,7 @@ GameObject:
   - component: {fileID: 6267374271226570253}
   - component: {fileID: 3170934593043333337}
   - component: {fileID: 9158362353362803054}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Chair_Leg4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -421,7 +404,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7802297624417551421}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0.48899996, z: 0}
+  m_LocalPosition: {x: 0, y: 0.235, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 6565724884340629999}
@@ -502,7 +485,7 @@ GameObject:
   - component: {fileID: 7770722705758308109}
   - component: {fileID: 5670058729225705555}
   - component: {fileID: 5541640288417671136}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Chair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -517,7 +500,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8131208793354069720}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0.489, z: -0}
+  m_LocalPosition: {x: 0, y: 0.23500003, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 6565724884340629999}

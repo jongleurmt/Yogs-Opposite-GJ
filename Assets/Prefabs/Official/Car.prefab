@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1045013537413974576}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wood Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 1603716524345351590}
   - component: {fileID: 903038858216358856}
   - component: {fileID: 7198933851403897340}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wheel_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,9 +144,9 @@ GameObject:
   - component: {fileID: 6988283135256861132}
   - component: {fileID: 3011060874091106683}
   - component: {fileID: -8247282319968530857}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Car
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,7 +160,7 @@ Transform:
   m_GameObject: {fileID: 3965772033509684291}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.13154948, y: 0.05571696, z: -0.117578276}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 1045013537413974576}
   m_Father: {fileID: 0}
@@ -199,9 +199,6 @@ MonoBehaviour:
   - {fileID: 3974885019326419494}
   Damage: 2
   Weight: 0
-  ForwordForce: 6
-  UpwordForce: 3.5
-  Health: 3
   ptsOnBrake: 20
   pts1stPlayerHit: 20
   pts2ndPlayerHit: 10
@@ -235,7 +232,7 @@ GameObject:
   - component: {fileID: 6427428622396892848}
   - component: {fileID: 6122568375625326694}
   - component: {fileID: 300107157555582352}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wheel_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +329,7 @@ GameObject:
   - component: {fileID: 1087937451469549875}
   - component: {fileID: 4081524135805076140}
   - component: {fileID: 5524016790307304910}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wheel_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,7 +426,7 @@ GameObject:
   - component: {fileID: 2166202953655868028}
   - component: {fileID: 4508488605652661912}
   - component: {fileID: 735451632665745614}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wheel_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -526,7 +523,7 @@ GameObject:
   - component: {fileID: 895171372786856806}
   - component: {fileID: 4019937833981199877}
   - component: {fileID: 6914620892420198874}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}

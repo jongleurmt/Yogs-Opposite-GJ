@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3514832270815108308}
   - component: {fileID: 7358353896852404603}
   - component: {fileID: 601037213994324852}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4243619337768349625}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 7359151916421840642}
   - component: {fileID: 2317497395508822201}
   - component: {fileID: 7892787534996673066}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Handle_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,9 +208,9 @@ GameObject:
   - component: {fileID: 4588926655180513019}
   - component: {fileID: 4588926655180513018}
   - component: {fileID: -1828063550095024491}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Chest
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -224,7 +224,7 @@ Transform:
   m_GameObject: {fileID: 4588926655180512997}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4243619337768349625}
   m_Father: {fileID: 0}
@@ -245,9 +245,6 @@ MonoBehaviour:
   children: []
   Damage: 2
   Weight: 2
-  ForwordForce: 5
-  UpwordForce: 2.5
-  Health: 3
   ptsOnBrake: 50
   pts1stPlayerHit: 25
   pts2ndPlayerHit: 10
@@ -294,7 +291,7 @@ GameObject:
   - component: {fileID: 102054031128649383}
   - component: {fileID: 2852789071139785398}
   - component: {fileID: 1306402730916329243}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Handle_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,7 +372,7 @@ GameObject:
   - component: {fileID: 6877333801290497635}
   - component: {fileID: 183694829549647076}
   - component: {fileID: 8849841489101755903}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}

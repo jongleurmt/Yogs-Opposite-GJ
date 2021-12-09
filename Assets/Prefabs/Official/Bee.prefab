@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8555323976140611328}
   - component: {fileID: 8289372245908777276}
   - component: {fileID: 4825932253134522996}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bee_Front_legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 4900886650251253884}
   - component: {fileID: 1940396432946949277}
   - component: {fileID: 5560216777557378516}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bee_sting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 2820439214091469085}
   - component: {fileID: 8099351190025633102}
   - component: {fileID: 443625100985841100}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bee_wing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 467038904534870187}
   - component: {fileID: 3465647104862283164}
   - component: {fileID: 1638748848083679790}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bee_Antenna
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 5502630694205918460}
   - component: {fileID: 7573804842758575667}
   - component: {fileID: 8133296737624890262}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bee_eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 7229597455259091460}
   - component: {fileID: 3381994632403551995}
   - component: {fileID: 7921285671461827297}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bee_Back_legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -498,7 +498,7 @@ GameObject:
   - component: {fileID: 223673299992614757}
   - component: {fileID: 1165144986064677045}
   - component: {fileID: 6957822471823750725}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bee_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -580,7 +580,7 @@ GameObject:
   - component: {fileID: 1205615178558362146}
   - component: {fileID: 4431372398519777679}
   - component: {fileID: 8368555383394970634}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bee_wing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -661,7 +661,7 @@ GameObject:
   - component: {fileID: 3796591764272747156}
   - component: {fileID: 1537231172032444466}
   - component: {fileID: 4495159810278703310}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bee_middle_legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -742,7 +742,7 @@ GameObject:
   - component: {fileID: 3875938144244882279}
   - component: {fileID: 3267434151184760057}
   - component: {fileID: 5428003083364350519}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bee_mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -825,9 +825,9 @@ GameObject:
   - component: {fileID: 3731366446841445562}
   - component: {fileID: 589517857061058437}
   - component: {fileID: 7653813412308357423}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bee
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -841,7 +841,7 @@ Transform:
   m_GameObject: {fileID: 7493053292583835174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 7086400392305917560}
   m_Father: {fileID: 0}
@@ -892,9 +892,6 @@ MonoBehaviour:
   children: []
   Damage: 0
   Weight: 0
-  ForwordForce: 7
-  UpwordForce: 3.5
-  Health: 2
   ptsOnBrake: 100
   pts1stPlayerHit: 50
   pts2ndPlayerHit: 20
@@ -909,7 +906,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7086400392305917560}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Soft toy BEE
   m_TagString: Untagged
   m_Icon: {fileID: 0}

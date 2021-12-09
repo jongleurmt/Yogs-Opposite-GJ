@@ -8,12 +8,15 @@ public class PlayerModel : MonoBehaviour
     private int m_Score = 0;
     public int Score => m_Score;
 
-    /// <summary>
-    /// Adds points to this player.
-    /// </summary>
-    /// <param name="value">The player value.</param>
+    // Adds points to player.
     public void AddScore(int value)
     {
         m_Score += value;
+    }
+
+    // Removes points from player.
+    public void ReduceScore(int value)
+    {
+        m_Score -= value;
     }
 }

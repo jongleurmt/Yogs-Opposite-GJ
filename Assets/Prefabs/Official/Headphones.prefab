@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2885329336983217804}
   - component: {fileID: 206166930596117444}
   - component: {fileID: 1986992023161867225}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Headphones_michandle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,9 +108,9 @@ GameObject:
   - component: {fileID: 5944191278231383557}
   - component: {fileID: 5944191278231383556}
   - component: {fileID: 5944191278231383559}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Headphones
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,7 +124,7 @@ Transform:
   m_GameObject: {fileID: 5944191278231383555}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 6868393220517813901}
   m_Father: {fileID: 0}
@@ -161,9 +161,6 @@ MonoBehaviour:
   - {fileID: 6166116902687705369}
   Damage: 0
   Weight: 0
-  ForwordForce: 3.5
-  UpwordForce: 7
-  Health: 1
   ptsOnBrake: 20
   pts1stPlayerHit: 20
   pts2ndPlayerHit: 10
@@ -194,7 +191,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6868393220517813901}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HeadPhones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +226,7 @@ GameObject:
   - component: {fileID: 4637056624585093557}
   - component: {fileID: 6140204875143604117}
   - component: {fileID: 6166116902687705370}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Headphones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +322,7 @@ GameObject:
   - component: {fileID: 7416894506683155052}
   - component: {fileID: 5474913693775750698}
   - component: {fileID: 4420031049485084781}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Headphones_mic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +404,7 @@ GameObject:
   - component: {fileID: 4522312487671574351}
   - component: {fileID: 8781220183335879618}
   - component: {fileID: 7885209154827508676}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Headphones_Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}

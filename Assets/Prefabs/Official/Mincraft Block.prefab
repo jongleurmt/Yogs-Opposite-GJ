@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3422265585693057255}
   - component: {fileID: 1788368849541295938}
   - component: {fileID: 4554679328722951048}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Minecraft_Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,9 +94,9 @@ GameObject:
   - component: {fileID: 7538653000009767639}
   - component: {fileID: 7124294639537661706}
   - component: {fileID: -6601611835754720770}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mincraft Block
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 7214969263947290746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 3422265585693057255}
   m_Father: {fileID: 0}
@@ -131,9 +131,6 @@ MonoBehaviour:
   children: []
   Damage: 0
   Weight: 0
-  ForwordForce: 7
-  UpwordForce: 3.5
-  Health: 3
   ptsOnBrake: 75
   pts1stPlayerHit: 50
   pts2ndPlayerHit: 20

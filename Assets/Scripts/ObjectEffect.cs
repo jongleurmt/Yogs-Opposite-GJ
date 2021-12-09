@@ -9,11 +9,11 @@ public class ObjectEffect : MonoBehaviour
 
     public enum DamageValue { Soft, Medium, Hard }
     public DamageValue Damage;
+
     public enum WeightValue { Light, Medium, Heavy }
     public WeightValue Weight;
-    public float ForwordForce, UpwordForce;
 
-    public int Health;
+    private int m_Health = 3;
 
     public int ptsOnBrake, pts1stPlayerHit, pts2ndPlayerHit;
 
@@ -21,7 +21,11 @@ public class ObjectEffect : MonoBehaviour
     private Rigidbody _rb;
 
     [SerializeField]
-    private bool held = false, thrown = false;
+    private bool m_Held = false, m_Thrown = false;
+    public bool IsHeld => m_Held;
+    public bool WasThrown => m_Thrown;
+
+    private PlayerController m_SourcePlayer = null;
 
     private void Awake()
     {
@@ -31,12 +35,16 @@ public class ObjectEffect : MonoBehaviour
         // add 1 to items amount in game manager
     }
 
-    public void OnInteract()
+    void Start()
     {
-        PickUp(transform);
+        switch (Damage)
+        {
+            case DamageValue.Soft: m_Health = 1; break;
+            case DamageValue.Medium: m_Health = 2; break;
+        }
     }
 
-    public void PickUp(Transform hands)
+    public void PickUp(PlayerController player)
     {
         //if it was picked up by player set held to true
         foreach(var parts in _coll)
@@ -45,65 +53,98 @@ public class ObjectEffect : MonoBehaviour
         }
         _rb.isKinematic = true;
         
-        Debug.Log("picked up");
+        m_SourcePlayer = player;
         
-        transform.parent = hands;
+        transform.parent = player.Hands;
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
 
-        held = true;
+        m_Held = true;
     }
 
     public void Throw()
     {
-        foreach (var parts in _coll)
-        {
-            parts.enabled = true;
-        }
+        StartCoroutine(EnableColliders());
         _rb.isKinematic = false;
         transform.parent = null;
 
+        float forwardForce = 10f;
+        switch (Weight)
+        {
+            case WeightValue.Medium: forwardForce = 7f; break;
+            case WeightValue.Heavy: forwardForce = 5f; break;
+        }
+
         //add force
-        Vector3 v3Force = (ForwordForce * transform.forward) + (UpwordForce * transform.up);
+        Vector3 v3Force = (forwardForce * transform.forward) + (forwardForce * 0.25f * transform.up);
         _rb.velocity = v3Force;
 
-        thrown = true;
+        m_Thrown = true;
+
+        IEnumerator EnableColliders()
+        {
+            yield return new WaitForSeconds(0.2f);
+            foreach (var parts in _coll)
+            {
+                parts.enabled = true;
+            }
+        }
     }
 
     private void OnCollisionEnter(Collision coll)
     {
-        //Debug.Log(coll.gameObject.name);
-
-        if(held)
+        if(m_Held)
         {
-            Health--;
-
-            if(coll.collider.tag == "player")
+            Debug.Log(coll.collider.name);
+            if(coll.collider.tag == "Player")
             {
                 //reduse points from other player and add to the player that trew this objec
-            }
-
-            if(Health <= 0)
-            {
-                //put the code below here else object will be destroyed when spawning
-                foreach (var child in children)
+                PlayerController controller = coll.gameObject.GetComponent<PlayerController>();
+                if (controller != null && !controller.Equals(m_SourcePlayer))
                 {
-                    child.AddComponent<Rigidbody>();
-                    child.transform.parent = null;
-
-                    Destroy(child, 2f);
+                    m_SourcePlayer.Model.AddScore(10);
+                    controller.StartInvincibility();
+                    Dent();
                 }
-
-                // subtrect 1 to items amount in game manager
-                Destroy(this.gameObject, 1f);
             }
-
         }
 
-        if (thrown)
+        if (m_Thrown)
         {
-            held = false;
-            thrown = false;
+            m_Held = false;
+            m_Thrown = false;
+            m_SourcePlayer = null;
         }
     }
+
+    public void Dent(bool deathFling = false)
+    {
+        m_Health--;
+        if (m_Health <= 0)
+        {
+            if (deathFling)
+                Throw();
+
+            if (m_Held)
+            {
+                m_SourcePlayer.Drop();
+                m_SourcePlayer = null;
+                transform.SetParent(null);
+            }
+
+            //put the code below here else object will be destroyed when spawning
+            foreach (var child in children)
+            {
+                child.AddComponent<Rigidbody>();
+                child.transform.parent = null;
+
+                child.layer = LayerMask.NameToLayer("InvinciblePlayer");
+                Destroy(child, 5f);
+            }
+
+            // subtrect 1 to items amount in game manager
+            gameObject.layer = LayerMask.NameToLayer("InvinciblePlayer");
+            Destroy(this.gameObject, 8f);
+        }
+}
 }

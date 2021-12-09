@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4095561589501647019}
   - component: {fileID: 8370730525640077573}
   - component: {fileID: 2975590927904790060}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Present-2
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4778681486639106337}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 4832599831498824466}
   m_Father: {fileID: 0}
@@ -49,9 +49,6 @@ MonoBehaviour:
   children: []
   Damage: 0
   Weight: 0
-  ForwordForce: 7
-  UpwordForce: 3.5
-  Health: 1
   ptsOnBrake: 20
   pts1stPlayerHit: 20
   pts2ndPlayerHit: 10
@@ -95,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4832599831498824466}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Presents_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +126,7 @@ GameObject:
   - component: {fileID: 7144806939265167862}
   - component: {fileID: 8247844869889618757}
   - component: {fileID: 1823358183296249178}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bow_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +207,7 @@ GameObject:
   - component: {fileID: 2115471953663011488}
   - component: {fileID: 7744754428307500472}
   - component: {fileID: 5598448732971830783}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Present_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

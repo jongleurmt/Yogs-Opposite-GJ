@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 3596028741578329546}
   - component: {fileID: 2258559083574722968}
   - component: {fileID: 5410891327911167753}
-  m_Layer: 0
+  - component: {fileID: 1046016831}
+  m_Layer: 8
   m_Name: Pick_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,6 +82,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1046016831
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2940899757434605202}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9000644, y: 0.12571467, z: 0.12426855}
+  m_Center: {x: 0, y: 0.27866292, z: 0.000000001862646}
 --- !u!1 &4397261166670120709
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,7 +104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3913035538827730367}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pickaxe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +138,8 @@ GameObject:
   - component: {fileID: 8845325982576290280}
   - component: {fileID: 8291402049647726403}
   - component: {fileID: 2975055328534807171}
-  m_Layer: 0
+  - component: {fileID: 1988096091}
+  m_Layer: 8
   m_Name: Shaft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,6 +209,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1988096091
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4794362561170278881}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11556481, y: 1.0634153, z: 0.099105656}
+  m_Center: {x: 0.0011040177, y: -0.14626072, z: 0.0025873557}
 --- !u!1 &9164715499329430857
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,9 +235,9 @@ GameObject:
   - component: {fileID: 4250026303080352022}
   - component: {fileID: 6294481588085675010}
   - component: {fileID: -2405287618009549676}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pickaxe
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -223,7 +251,7 @@ Transform:
   m_GameObject: {fileID: 9164715499329430857}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children:
   - {fileID: 3913035538827730367}
   m_Father: {fileID: 0}
@@ -274,9 +302,6 @@ MonoBehaviour:
   - {fileID: 4794362561170278881}
   Damage: 0
   Weight: 0
-  ForwordForce: 7
-  UpwordForce: 3.5
-  Health: 3
   ptsOnBrake: 75
   pts1stPlayerHit: 50
   pts2ndPlayerHit: 20

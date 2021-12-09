@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 713495575089352463}
   - component: {fileID: 7995528174269751526}
   - component: {fileID: 3577742557399705851}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 9194125106882926235}
   - component: {fileID: 7670637152222590134}
   - component: {fileID: 3209936659631549735}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4663798224382126301}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirePlace of poop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 8415122501639205816}
   - component: {fileID: 951900838006392102}
   - component: {fileID: 8661505305149495801}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 339939251283459801}
   - component: {fileID: 4344498381218895756}
   - component: {fileID: 7808308593252757360}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 2999586438527792342}
   - component: {fileID: 3640284755051538461}
   - component: {fileID: 3739850681649538632}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -455,7 +455,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8411463726232482628}
   - component: {fileID: 8411463726232482629}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Firaplace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -471,7 +471,7 @@ Transform:
   m_GameObject: {fileID: 8411463726232482626}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.0013799071, y: 0.8, z: 0.021690607}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 7.5, y: 7.5, z: 7.5}
   m_Children:
   - {fileID: 4663798224382126301}
   m_Father: {fileID: 0}

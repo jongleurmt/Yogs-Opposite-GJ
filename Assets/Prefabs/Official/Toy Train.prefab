@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3684963054402786188}
   - component: {fileID: 5193238842283692821}
   - component: {fileID: 165020784027539115}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Train_connector2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 1457286794711182516}
   - component: {fileID: 7304977401105367594}
   - component: {fileID: 261865152198837550}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Train_Back_holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,9 +202,9 @@ GameObject:
   - component: {fileID: 1258033544948050737}
   - component: {fileID: 1258033544948050736}
   - component: {fileID: 1258033544948050743}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Toy Train
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -218,7 +218,7 @@ Transform:
   m_GameObject: {fileID: 1258033544948050742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 2081821445388215420}
   m_Father: {fileID: 0}
@@ -280,9 +280,6 @@ MonoBehaviour:
   - {fileID: 6126368080871108479}
   Damage: 2
   Weight: 1
-  ForwordForce: 6
-  UpwordForce: 3
-  Health: 3
   ptsOnBrake: 100
   pts1stPlayerHit: 50
   pts2ndPlayerHit: 20
@@ -299,7 +296,7 @@ GameObject:
   - component: {fileID: 3412492407173200224}
   - component: {fileID: 2760242908486486804}
   - component: {fileID: 5525568165856794319}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Train_back_wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +376,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2081821445388215420}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Toy Train
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -421,7 +418,7 @@ GameObject:
   - component: {fileID: 677259927886212751}
   - component: {fileID: 5358529611415955434}
   - component: {fileID: 1968902430374381618}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Train_Back_base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -517,7 +514,7 @@ GameObject:
   - component: {fileID: 8362099558718545552}
   - component: {fileID: 3716188591813648815}
   - component: {fileID: 2978643398967757143}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Train_main_base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -613,7 +610,7 @@ GameObject:
   - component: {fileID: 4589861148019923392}
   - component: {fileID: 960303303989057533}
   - component: {fileID: 3717031540849174248}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Train_main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -711,7 +708,7 @@ GameObject:
   - component: {fileID: 3972743745949909221}
   - component: {fileID: 7580240191858123903}
   - component: {fileID: 6113048221913139645}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Train_connector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -806,7 +803,7 @@ GameObject:
   - component: {fileID: 5896223144047013112}
   - component: {fileID: 5703903510719802306}
   - component: {fileID: 6126368080871108472}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Train_Smokething
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -901,7 +898,7 @@ GameObject:
   - component: {fileID: 674472589473248397}
   - component: {fileID: 8777653138283906437}
   - component: {fileID: 6212487483750257367}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Train_middle_cabin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -997,7 +994,7 @@ GameObject:
   - component: {fileID: 2851475871784767860}
   - component: {fileID: 93432958926325827}
   - component: {fileID: 6200576900113794976}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Train_Middle_wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1080,7 +1077,7 @@ GameObject:
   - component: {fileID: 2989351832133842007}
   - component: {fileID: 9053512343007173575}
   - component: {fileID: 8234639113356338356}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Train_middle_base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1175,7 +1172,7 @@ GameObject:
   - component: {fileID: 565924250914346692}
   - component: {fileID: 4672658434733921324}
   - component: {fileID: 3330257770976646073}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Train_main_wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
