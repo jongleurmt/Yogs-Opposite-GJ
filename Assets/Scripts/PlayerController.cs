@@ -1,3 +1,6 @@
+// TODO: Receive Melee Attack
+// TODO: Break object?
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -133,6 +136,7 @@ public class PlayerController : PlayerControllerBase
     protected override void Direction(Vector2 value)
     {
         m_Direction = new Vector3(value.x, 0, value.y);
+        m_Animator.SetBool("IsMoving", !m_Direction.Equals(Vector3.zero));
     }
 
     // Interact handler.
