@@ -13,8 +13,11 @@ public class LobbyPlayer : PlayerControllerBase
     // The rigidbody.
     private Rigidbody m_Rigidbody = null;
 
+    // The default transform values.
     private Vector3 m_DefaultPosition;
     private Quaternion m_DefaultRotation;
+
+    private bool m_IsConfirmed = false;
 
     void Awake()
     {
@@ -25,10 +28,14 @@ public class LobbyPlayer : PlayerControllerBase
         m_DefaultRotation = m_Rigidbody.rotation;
     }
 
-    IEnumerator Despawn()
+    void Update()
     {
-        yield return new WaitForSeconds(0.15f);
-        
+        if (transform.position.y > 10)
+            Despawn();
+    }
+
+    void Despawn()
+    {
         m_Rigidbody.velocity = Vector3.zero;
         m_Rigidbody.angularVelocity = Vector3.zero;
         m_Rigidbody.MovePosition(m_DefaultPosition);
@@ -40,14 +47,22 @@ public class LobbyPlayer : PlayerControllerBase
     // Confirm
     protected override void Jump()
     {
-        
+        m_LobbyManager.ConfirmPlayer(ID);
+        m_IsConfirmed = true;
     }
 
     // Disconnect
     protected override void Melee()
     {
-        m_Rigidbody.AddForce(m_EjectForce, ForceMode.Impulse);
-        StartCoroutine(Despawn());
+        if (m_IsConfirmed)
+        {
+            m_IsConfirmed = false;
+        }
+        else
+        {
+            m_Rigidbody.AddForce(m_EjectForce, ForceMode.Impulse);
+        }
+        
         m_LobbyManager.CancelPlayer(ID);
     }
 }

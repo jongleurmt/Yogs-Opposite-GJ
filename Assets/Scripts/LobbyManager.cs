@@ -52,17 +52,12 @@ public class LobbyManager : MonoBehaviour
         {
             // Stop the countdown.
             m_PlayerStates[id] = PlayerState.Registered;
-            // m_Controls[id]?.SetState(m_PlayerStates[id]);
-            // StopCountdown();
         }
         else if (m_PlayerStates[id].Equals(PlayerState.Registered))
         {
             // Remove the player state and kill the controls.
             m_PlayerStates.Remove(id);
             PlayerManager.Instance.DeregisterPlayer(id);
-
-            // Hide the UI.
-            // m_Controls[id]!.gameObject?.SetActive(false);
 
             // Check if the rest are still confirmed.
             CheckPlayers();
@@ -78,33 +73,20 @@ public class LobbyManager : MonoBehaviour
         // Do nothing if any player isn't ready.
         foreach (PlayerState state in m_PlayerStates.Values)
             if (!state.Equals(PlayerState.Ready)) return;
-        
-        // m_UI.SetCountdownVisible(true);
-        // m_CountdownCoroutine = StartCoroutine(CountdownRoutine());
-        // IEnumerator CountdownRoutine()
-        // {
-        //     int timer = 4;
-        //     while (timer > 0)
-        //     {
-        //         timer--;
-        //         m_UI.SetCountdownText(timer > 0 ? timer.ToString() : "<size=150>Ready!</size>");
-        //         yield return new WaitForSeconds(1f);
-        //     }
 
-        //     // Desync the player manager.
-        //     PlayerManager.Instance.OnPlayerJoined.RemoveListener(OnPlayerJoined);
-        //     PlayerManager.Instance.DisableJoining();
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+    }
 
-        //     // Detach the input handlers.
-        //     foreach (PlayerControls controls in m_Controls)
-        //         controls?.Unbind();
-            
-        //     // Add an AI player if there is only one who joined.
-        //     if (m_PlayerStates.Keys.Count == 1)
-        //         PlayerManager.Instance.RegisterAI();
+    public void ConfirmPlayer(int id)
+    {
+        // Do nothing if the key doesn't exist.
+        if (!m_PlayerStates.ContainsKey(id)) return;
 
-        //     // Load the next match.
-        //     RoundManager.Instance.LoadNextMatch();
-        // }
+        // // Push the player to Ready only.
+        if (m_PlayerStates[id].Equals(PlayerState.Registered))
+            m_PlayerStates[id] = PlayerState.Ready;
+        else return;
+
+        CheckPlayers();
     }
 }
