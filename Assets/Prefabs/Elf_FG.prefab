@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4130119405135939812}
   - component: {fileID: 3890696738890833001}
   - component: {fileID: 9063179231109607656}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Elf_blet_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 3570768673413225917}
   - component: {fileID: 3670038601197118646}
   - component: {fileID: 8745233091699613903}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Elf_hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 1411615261602849936}
   - component: {fileID: 6853375977822976190}
   - component: {fileID: 6293165938287737457}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Elf_FG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 5661851748295543326}
   - component: {fileID: 253238035628896783}
   - component: {fileID: 1901560164475611722}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Elf_Left_shoe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -406,7 +406,7 @@ GameObject:
   - component: {fileID: 2739803453614790123}
   - component: {fileID: 7309785848706572481}
   - component: {fileID: 1761814170025682818}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Elf_Body_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,7 +488,7 @@ GameObject:
   - component: {fileID: 8245854256509180040}
   - component: {fileID: 15108299718443022}
   - component: {fileID: 2522253190652808962}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Elf_Right_shoe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -570,7 +570,7 @@ GameObject:
   - component: {fileID: 403945375268428318}
   - component: {fileID: 7569850666717875230}
   - component: {fileID: 4635068400104742413}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Elf_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -682,7 +682,7 @@ GameObject:
   - component: {fileID: 3959425452365616371}
   - component: {fileID: 6586313196863003420}
   - component: {fileID: 5379140230622712279}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Elf_button_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -763,7 +763,7 @@ GameObject:
   - component: {fileID: 8781952634575809036}
   - component: {fileID: 1917102088346466017}
   - component: {fileID: 8945075934022088251}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Elf_hair_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -888,7 +888,7 @@ GameObject:
   - component: {fileID: 4395728339660841796}
   - component: {fileID: 1136670259559699261}
   - component: {fileID: 764401638486108850}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Elf_Left_hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1000,7 +1000,7 @@ GameObject:
   - component: {fileID: 7932316461863218804}
   - component: {fileID: 8301178744412905291}
   - component: {fileID: 2387094357065773361}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Elf_Belt_buckle_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1081,7 +1081,7 @@ GameObject:
   - component: {fileID: 1502454304485730132}
   - component: {fileID: 5422325859290404126}
   - component: {fileID: 5343852386563147411}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Elf_Right_hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1163,7 +1163,7 @@ GameObject:
   - component: {fileID: 6272071935854753772}
   - component: {fileID: 8696664666502976216}
   - component: {fileID: 2486571372589443280}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Glasses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1244,7 +1244,7 @@ GameObject:
   - component: {fileID: 5880015048762838149}
   - component: {fileID: 6178363541488525451}
   - component: {fileID: 6270096514255597436}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Elf_button_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1323,7 +1323,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8945067994311203888}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Elf_VISUAL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1356,7 +1356,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9152264567288641143}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Elf_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1390,7 +1390,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9152264567666501181}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Elf_Shoulder_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1421,7 +1421,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9152264568465215152}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Elf_Shoulder_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1452,7 +1452,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9152264568674351217}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Elf_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

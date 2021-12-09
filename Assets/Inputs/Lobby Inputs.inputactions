@@ -1,0 +1,44 @@
+{
+    "name": "Lobby Actions",
+    "maps": [
+        {
+            "name": "Lobby",
+            "id": "2e1ea2d1-dc69-4110-95e1-e6daebd1262f",
+            "actions": [
+                {
+                    "name": "Join",
+                    "type": "Button",
+                    "id": "0db74889-9ba8-4215-8d15-7d266a957539",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c10736cb-06a2-4bba-a071-6d06497c3ef9",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Join",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1b72f124-2d7a-4e06-bc1a-0fb316298acf",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Join",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
