@@ -11,7 +11,7 @@ public class ObjectEffect : MonoBehaviour
     public DamageValue Damage;
     public enum WeightValue { Light, Medium, Heavy }
     public WeightValue Weight;
-    public int Force;
+    public float ForwordForce, UpwordForce;
 
     public int Health;
 
@@ -64,7 +64,7 @@ public class ObjectEffect : MonoBehaviour
         transform.parent = null;
 
         //add force
-        Vector3 v3Force = (Force * transform.forward) + (Force * transform.up);
+        Vector3 v3Force = (ForwordForce * transform.forward) + (UpwordForce * transform.up);
         _rb.velocity = v3Force;
 
         thrown = true;
