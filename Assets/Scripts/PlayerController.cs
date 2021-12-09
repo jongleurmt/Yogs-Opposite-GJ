@@ -39,8 +39,8 @@ public class PlayerController : PlayerControllerBase
     // The object currently held.
     private ObjectEffect m_ObjectHeld = null;
 
-    // The mesh renderer components.
-    private MeshRenderer[] m_MeshRenderers = {};
+    // The invincibility boolean.
+    private bool m_IsInvincible = false;
 
     // Whether or not the player is grounded.
     private bool m_IsGrounded = true;
@@ -65,7 +65,6 @@ public class PlayerController : PlayerControllerBase
     /// </summary>
     void Awake()
     {
-        m_MeshRenderers = GetComponentsInChildren<MeshRenderer>();
         m_Model = GetComponent<PlayerModel>();
 
         m_Rigidbody = GetComponent<Rigidbody>();
@@ -86,6 +85,14 @@ public class PlayerController : PlayerControllerBase
     // Physics handling.
     void FixedUpdate()
     {
+        // Fall handler.
+        if (m_Rigidbody.velocity.y < 0 && !m_IsGrounded)
+            m_Rigidbody.drag = m_DescentDrag;
+        else
+            m_Rigidbody.drag = m_DefaultDrag;
+
+        if (m_IsInvincible) return;
+        
         // Character motion.
         Vector3 velocity = m_Direction * m_MotionSpeed;
         velocity.y = m_Rigidbody.velocity.y;
@@ -97,12 +104,6 @@ public class PlayerController : PlayerControllerBase
             Quaternion lookRot = Quaternion.LookRotation(m_Direction, Vector3.up);
             m_Rigidbody.MoveRotation(Quaternion.Slerp(m_Rigidbody.rotation, lookRot, m_RotationSpeed * Time.fixedDeltaTime));
         }
-
-        // Fall handler.
-        if (m_Rigidbody.velocity.y < 0 && !m_IsGrounded)
-            m_Rigidbody.drag = m_DescentDrag;
-        else
-            m_Rigidbody.drag = m_DefaultDrag;
     }
 
     // Collision Detection.
@@ -111,6 +112,7 @@ public class PlayerController : PlayerControllerBase
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             m_IsGrounded = true;
+            m_Animator.SetBool("IsGrounded", m_IsGrounded);
         }
         else if (collision.gameObject.CompareTag("MeleeArm"))
         {
@@ -121,7 +123,7 @@ public class PlayerController : PlayerControllerBase
             direction.y = 1f;
             direction.x *= 10f;
 
-            StartCoroutine(Invincibility(3, 0.15f));
+            m_Animator.SetTrigger("Invincibility");
         }
     }
 
@@ -129,7 +131,10 @@ public class PlayerController : PlayerControllerBase
     void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
             m_IsGrounded = false;
+            m_Animator.SetBool("IsGrounded", m_IsGrounded);
+        }
     }
 
     // Direction handler.
@@ -192,22 +197,20 @@ public class PlayerController : PlayerControllerBase
         m_Animator.SetBool("IsHoldingObject", false);
     }
 
-    // Temporary invincibility.
-    protected IEnumerator Invincibility(int cycles, float transitionDuration)
+    // Toggles invincibility.
+    public void SetInvincible(bool value)
     {
-        gameObject.layer = LayerMask.NameToLayer("InvinciblePlayer");
-        for (int i = 0; i < cycles; i++)
-        {
-            foreach (MeshRenderer mr in m_MeshRenderers)
-                mr.enabled = false;
-
-            yield return new WaitForSeconds(transitionDuration);
-
-            foreach (MeshRenderer mr in m_MeshRenderers)
-                mr.enabled = true;
-            
-            yield return new WaitForSeconds(transitionDuration);
-        }
-        gameObject.layer = LayerMask.NameToLayer("Player");
+        m_IsInvincible = value;
+        gameObject.layer = LayerMask.NameToLayer(m_IsInvincible ? "InvinciblePlayer" : "Player");
     }
+
+    // Toggles invincibility ON.
+    // Used by the Animator.
+    public void EnableInvincibility()
+        => SetInvincible(true);
+
+    // Toggles invincibility ON.
+    // Used by the Animator.
+    public void DisableInvincibility()
+        => SetInvincible(false);
 }
