@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7296752787420429599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7296752787420429593}
+  - component: {fileID: 4705048236986687073}
+  - component: {fileID: 7296752787420429592}
+  m_Layer: 0
+  m_Name: ObjectPooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7296752787420429593
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7296752787420429599}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.54, z: 2.97}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4705048236986687073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7296752787420429599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a7cbaf6f16890a409916b7206aebf19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxX: {fileID: 0}
+  minX: {fileID: 0}
+  maxZ: {fileID: 0}
+  minZ: {fileID: 0}
+  topY: {fileID: 0}
+  minAmount: 15
+  maxAmount: 30
+  offset: 5
+--- !u!114 &7296752787420429592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7296752787420429599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841fd70ebcfc95843a1728ebd3a1c132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - tag: Bee
+    prefab: {fileID: 7493053292583835174, guid: 2a5a70f2fc03b8347a21c2e1072fb061, type: 3}
+    size: 4
+  - tag: Camera
+    prefab: {fileID: 1247795322434211231, guid: 5a59064adf3f681468f89bdfba0647a4, type: 3}
+    size: 5
+  - tag: CandyCane
+    prefab: {fileID: 4768371630717615396, guid: a6d936aa683e8264ebc3ae236e2c05c6, type: 3}
+    size: 6
+  - tag: Car
+    prefab: {fileID: 3965772033509684291, guid: 357272a674ba9ee49a8038349cc68c9e, type: 3}
+    size: 6
+  - tag: Cube 1
+    prefab: {fileID: 62340819872615577, guid: 919c470651eebf74cb2b05054a688565, type: 3}
+    size: 6
+  - tag: Cube 2
+    prefab: {fileID: 5649617356844375788, guid: 999a5647e70872946b30dfe19ec66324, type: 3}
+    size: 6
+  - tag: Cube 3
+    prefab: {fileID: 3709653329728913221, guid: 2d3df0bcd7bfcf54f8b84c47eb883cde, type: 3}
+    size: 6
+  - tag: Cube 4
+    prefab: {fileID: 369429529764479951, guid: 7b86292da9355b445acc4bb598673325, type: 3}
+    size: 6
+  - tag: Googgles
+    prefab: {fileID: 369429529764479951, guid: 7b86292da9355b445acc4bb598673325, type: 3}
+    size: 7
+  - tag: Headphones
+    prefab: {fileID: 5944191278231383555, guid: 5f460ae9fafd5a648bf87cfa06d2a9e5, type: 3}
+    size: 0
+  - tag: Minecraft Block
+    prefab: {fileID: 7214969263947290746, guid: 67d2c29ef05303d4bba6c2992056714a, type: 3}
+    size: 6
+  - tag: Pickaxe
+    prefab: {fileID: 9164715499329430857, guid: 94befa8df7efcaf41b8bae4fee3da12e, type: 3}
+    size: 4
+  - tag: Shark
+    prefab: {fileID: 2712909683440942830, guid: a3606c3e14a05674e98b3f0d3add328c, type: 3}
+    size: 4
+  - tag: Train
+    prefab: {fileID: 1258033544948050742, guid: d115935c37b54144fa2838de48ba5bdd, type: 3}
+    size: 5
+  - tag: Turtle
+    prefab: {fileID: 9014711447484073903, guid: 4aa0c8f826078c543a73475b6e9da34b, type: 3}
+    size: 4
