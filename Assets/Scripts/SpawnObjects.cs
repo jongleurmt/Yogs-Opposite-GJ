@@ -16,7 +16,7 @@ public class SpawnObjects : MonoBehaviour
     private void Start()
     {
         objectPooler = ObjectPooler.Instance;
-        spawnItems();
+        //spawnItems();
     }
 
     void Update()
