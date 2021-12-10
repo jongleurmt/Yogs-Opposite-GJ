@@ -58,6 +58,7 @@ MonoBehaviour:
   pts2ndPlayerHit: 5
   m_Held: 0
   m_Thrown: 0
+  Spawn: {fileID: 4705048236986687073, guid: 57ddb6009c69d5d43b34c2b310c9a364, type: 3}
 --- !u!54 &1247795322434211229
 Rigidbody:
   m_ObjectHideFlags: 0

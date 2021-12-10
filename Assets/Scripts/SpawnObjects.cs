@@ -9,14 +9,26 @@ public class SpawnObjects : MonoBehaviour
     public int minAmount, maxAmount;
     public int offset;
 
+    private float _Timer;
 
     ObjectPooler objectPooler;
 
     private void Start()
     {
         objectPooler = ObjectPooler.Instance;
-
         spawnItems();
+    }
+
+    void Update()
+    {
+        _Timer += Time.deltaTime;
+
+        if (_Timer > 30f)
+        {
+            spawnItems();
+            Debug.Log("Pooling");
+            _Timer = 0;
+        }
     }
 
     public void spawnItems()
@@ -29,6 +41,7 @@ public class SpawnObjects : MonoBehaviour
 
             float randX = Random.Range(minX.position.x + offset, maxX.position.x - offset);
             float randZ = Random.Range(minZ.position.z + offset, maxZ.position.z - offset);
+
             Vector3 newPosition = new Vector3(randX, topY.position.y, randZ);
 
             //randomli selects an object from the pool but it wants the tag name as in stings(objectPooler.pools[itemRand].tag)
