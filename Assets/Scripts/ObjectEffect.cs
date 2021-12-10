@@ -102,7 +102,7 @@ public class ObjectEffect : MonoBehaviour
                 PlayerController controller = coll.gameObject.GetComponent<PlayerController>();
                 if (controller != null && !controller.Equals(m_SourcePlayer))
                 {
-                    m_SourcePlayer.Model.AddScore(10);
+                    m_SourcePlayer.AddScore(10);
                     controller.StartInvincibility();
                     Dent();
                 }
