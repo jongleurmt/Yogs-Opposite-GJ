@@ -202,8 +202,9 @@ MonoBehaviour:
   ptsOnBrake: 20
   pts1stPlayerHit: 20
   pts2ndPlayerHit: 10
-  held: 0
-  thrown: 0
+  m_Held: 0
+  m_Thrown: 0
+  Spawn: {fileID: 4705048236986687073, guid: 57ddb6009c69d5d43b34c2b310c9a364, type: 3}
 --- !u!54 &-8247282319968530857
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -231,7 +232,7 @@ GameObject:
   - component: {fileID: 6413380137481812886}
   - component: {fileID: 6427428622396892848}
   - component: {fileID: 6122568375625326694}
-  - component: {fileID: 300107157555582352}
+  - component: {fileID: 3478757519130609404}
   m_Layer: 8
   m_Name: Wheel_4
   m_TagString: Untagged
@@ -303,7 +304,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &300107157555582352
+--- !u!136 &3478757519130609404
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -316,7 +317,7 @@ CapsuleCollider:
   m_Radius: 0.00055275275
   m_Height: 0.001105506
   m_Direction: 1
-  m_Center: {x: -0.0011256337, y: 0.0015987147, z: -0.00058997364}
+  m_Center: {x: -0.001125634, y: -0.0015987158, z: -0.00058997376}
 --- !u!1 &4831317956181318854
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,7 +329,7 @@ GameObject:
   - component: {fileID: 8352355457495707494}
   - component: {fileID: 1087937451469549875}
   - component: {fileID: 4081524135805076140}
-  - component: {fileID: 5524016790307304910}
+  - component: {fileID: 4950730377745299933}
   m_Layer: 8
   m_Name: Wheel_2
   m_TagString: Untagged
@@ -400,7 +401,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5524016790307304910
+--- !u!136 &4950730377745299933
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -410,10 +411,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.00055275275
-  m_Height: 0.001105506
+  m_Radius: 0.0005527528
+  m_Height: 0.0011055062
   m_Direction: 1
-  m_Center: {x: -0.0011256337, y: 0.0015987147, z: -0.00058997364}
+  m_Center: {x: 0.0011256286, y: 0.0015987146, z: -0.0005899737}
 --- !u!1 &8486069019519467957
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,7 +426,7 @@ GameObject:
   - component: {fileID: 3682571708313298832}
   - component: {fileID: 2166202953655868028}
   - component: {fileID: 4508488605652661912}
-  - component: {fileID: 735451632665745614}
+  - component: {fileID: 232895592445208735}
   m_Layer: 8
   m_Name: Wheel_3
   m_TagString: Untagged
@@ -497,7 +498,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &735451632665745614
+--- !u!136 &232895592445208735
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -507,10 +508,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.00055275275
+  m_Radius: 0.0005527528
   m_Height: 0.001105506
   m_Direction: 1
-  m_Center: {x: -0.0011256337, y: 0.0015987147, z: -0.00058997364}
+  m_Center: {x: 0.0011256284, y: -0.001598716, z: -0.0005899737}
 --- !u!1 &8530324159668180528
 GameObject:
   m_ObjectHideFlags: 0

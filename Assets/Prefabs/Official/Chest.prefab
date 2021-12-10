@@ -206,8 +206,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4588926655180513016}
   - component: {fileID: 4588926655180513019}
-  - component: {fileID: 4588926655180513018}
   - component: {fileID: -1828063550095024491}
+  - component: {fileID: 333523218416707106}
+  - component: {fileID: 1209151531969037036}
   m_Layer: 8
   m_Name: Chest
   m_TagString: Object
@@ -248,22 +249,9 @@ MonoBehaviour:
   ptsOnBrake: 50
   pts1stPlayerHit: 25
   pts2ndPlayerHit: 10
-  held: 0
-  thrown: 0
---- !u!64 &4588926655180513018
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4588926655180512997}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -69760931014144829, guid: 5f76b74167e027e48a816e3e2c84f207, type: 3}
+  m_Held: 0
+  m_Thrown: 0
+  Spawn: {fileID: 4705048236986687073, guid: 57ddb6009c69d5d43b34c2b310c9a364, type: 3}
 --- !u!54 &-1828063550095024491
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -280,6 +268,33 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &333523218416707106
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4588926655180512997}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.71, y: 0.6, z: 1}
+  m_Center: {x: 0, y: -0.2, z: 0}
+--- !u!136 &1209151531969037036
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4588926655180512997}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.88
+  m_Direction: 0
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6616136466078443993
 GameObject:
   m_ObjectHideFlags: 0

@@ -42,6 +42,7 @@ public class ObjectEffect : MonoBehaviour
             case DamageValue.Soft: m_Health = 1; break;
             case DamageValue.Medium: m_Health = 2; break;
         }
+
     }
 
     public void PickUp(PlayerController player)
@@ -107,6 +108,8 @@ public class ObjectEffect : MonoBehaviour
                     Dent();
                 }
             }
+
+            if (coll.collider.tag == "Wall") Dent();
         }
 
         if (m_Thrown)
