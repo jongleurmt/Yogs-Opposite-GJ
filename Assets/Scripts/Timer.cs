@@ -11,6 +11,12 @@ public class Timer : MonoBehaviour
     [SerializeField]
     private Text m_DisplayText = null;
 
+    [SerializeField]
+    private Text m_CountdownText = null;
+
+    [SerializeField]
+    private GameObject m_CountdownContainer = null;
+
     private float m_CurrentTime;
 
     private bool m_IsTimerRunning = false;
@@ -22,12 +28,19 @@ public class Timer : MonoBehaviour
 
         IEnumerator Countdown()
         {
-            for (int timer = 3; timer > -1; timer--)
+            m_CountdownContainer.SetActive(true);
+            
+            for (int timer = 3; timer > 0; timer--)
             {
+                m_CountdownText.text = timer.ToString();
                 yield return new WaitForSeconds(1f);
-                m_DisplayText.text = timer.ToString();
             }
+            
+            m_CountdownText.text = "YEET";
+            yield return new WaitForSeconds(1f);
+
             m_IsTimerRunning = true;
+            m_CountdownContainer.SetActive(false);
         }
     }
 
@@ -39,9 +52,12 @@ public class Timer : MonoBehaviour
         if (m_CurrentTime <= 0)
         {
             m_CurrentTime = 0;
+            m_IsTimerRunning = false;
             enabled = false;
         }
 
-        m_DisplayText.text = m_CurrentTime.ToString("0#.000");
+        int seconds = (int) m_CurrentTime % 60;
+        int minutes = (int) m_CurrentTime / 60;
+        m_DisplayText.text = $"{minutes}:{seconds.ToString("00")}";
     }
 }

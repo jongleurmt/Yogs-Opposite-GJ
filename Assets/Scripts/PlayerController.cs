@@ -1,15 +1,11 @@
-// TODO: Receive Melee Attack
-// TODO: Break object?
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody), typeof(PlayerModel))]
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerController : PlayerControllerBase
 {
-    [Header("Testing")]
     [SerializeField]
     private PlayerInput m_BindInput = null;
 
@@ -52,15 +48,21 @@ public class PlayerController : PlayerControllerBase
     // The target rotation.
     private Vector3 m_TargetRotation = Vector3.zero;
 
+    // The match manager.
+    private MatchManager m_Manager = null;
+
     // The rigidbody component.
     private Rigidbody m_Rigidbody = null;
 
-    // The player model component.
-    private PlayerModel m_Model = null;
-    public PlayerModel Model => m_Model;
-
     // The default drag.
     private float m_DefaultDrag = 0f;
+
+    // The player score.
+    private int m_Score = 0;
+
+    // The crown object.
+    [SerializeField]
+    private GameObject m_Crown;
 
     // The list of players triggered.
     private List<PlayerController> m_PlayerList = new List<PlayerController>();
@@ -70,10 +72,11 @@ public class PlayerController : PlayerControllerBase
     /// </summary>
     void Awake()
     {
-        m_Model = GetComponent<PlayerModel>();
-
         m_Rigidbody = GetComponent<Rigidbody>();
         m_Animator = GetComponentInChildren<Animator>();
+
+        m_Manager = FindObjectOfType<MatchManager>();
+        m_Manager.SetRoyal.AddListener(SetRoyal);
 
         m_DefaultDrag = m_Rigidbody.drag;
     }
@@ -85,6 +88,9 @@ public class PlayerController : PlayerControllerBase
     {
         if (m_BindInput != null) Bind(m_BindInput);
         m_TargetRotation = m_Rigidbody.rotation.eulerAngles;
+
+        // remove royal status
+        SetRoyal(-1);
     }
 
     // Physics handling.
@@ -198,7 +204,7 @@ public class PlayerController : PlayerControllerBase
 
         foreach (PlayerController controller in m_PlayerList)
         {
-            Model.AddScore(10);
+            AddScore(10);
             controller.StartInvincibility();
         }
 
@@ -244,5 +250,22 @@ public class PlayerController : PlayerControllerBase
     {
         m_ObjectHeld = null;
         m_Animator.SetBool("IsHoldingObject", false);
+    }
+
+    public void AddScore(int value)
+    {
+        m_Score += value;
+        if (m_Manager != null) m_Manager.SetPlayerScore(ID, m_Score);
+    }
+
+    public void ReduceScore(int value)
+    {
+        m_Score -= value;
+        if (m_Manager != null) m_Manager.SetPlayerScore(ID, m_Score);
+    }
+
+    protected void SetRoyal(int playerIndex)
+    {
+        m_Crown?.SetActive(playerIndex == ID);
     }
 }
