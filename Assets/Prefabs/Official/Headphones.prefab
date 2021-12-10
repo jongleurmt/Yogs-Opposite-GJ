@@ -164,8 +164,8 @@ MonoBehaviour:
   ptsOnBrake: 20
   pts1stPlayerHit: 20
   pts2ndPlayerHit: 10
-  held: 0
-  thrown: 0
+  m_Held: 0
+  m_Thrown: 0
 --- !u!54 &5944191278231383559
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 413820747405125302}
   - component: {fileID: 4637056624585093557}
   - component: {fileID: 6140204875143604117}
-  - component: {fileID: 6166116902687705370}
+  - component: {fileID: 1531351037037890133}
   m_Layer: 8
   m_Name: Headphones
   m_TagString: Untagged
@@ -298,8 +298,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6166116902687705370
-BoxCollider:
+--- !u!136 &1531351037037890133
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -308,9 +308,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.003893724, y: 0.0017986286, z: 0.0017986285}
-  m_Center: {x: 2.3283064e-10, y: -0.00000036403065, z: -0.00000048536447}
+  m_Radius: 0.001
+  m_Height: 0.004
+  m_Direction: 0
+  m_Center: {x: 2.3283064e-10, y: -0.00000036403065, z: -0.0000004853645}
 --- !u!1 &7760857929414812150
 GameObject:
   m_ObjectHideFlags: 0

@@ -56,8 +56,8 @@ MonoBehaviour:
   ptsOnBrake: 20
   pts1stPlayerHit: 10
   pts2ndPlayerHit: 5
-  held: 0
-  thrown: 0
+  m_Held: 0
+  m_Thrown: 0
 --- !u!54 &1247795322434211229
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 7456191762345001710}
   - component: {fileID: 8007155883901903531}
   - component: {fileID: 7903919634380458845}
-  - component: {fileID: 3470110838548945920}
+  - component: {fileID: 86774853650469055}
   m_Layer: 8
   m_Name: Camera_button_2
   m_TagString: Untagged
@@ -169,8 +169,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3470110838548945920
-MeshCollider:
+--- !u!65 &86774853650469055
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -179,10 +179,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4741933016693018559, guid: f2f568fea142cd740827e9220ca65c4f, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.00021136942, y: 0.00006888714, z: 0.00020102419}
+  m_Center: {x: 0.0009814808, y: 0.0013672614, z: 0.00008318245}
 --- !u!1 &6297933188552652334
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +193,7 @@ GameObject:
   - component: {fileID: 6580289926364410033}
   - component: {fileID: 1684738009552677221}
   - component: {fileID: 6735555291556091318}
-  - component: {fileID: 6297933188552652335}
+  - component: {fileID: 2821035670967882306}
   m_Layer: 8
   m_Name: Camera_lens
   m_TagString: Untagged
@@ -266,8 +265,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6297933188552652335
-MeshCollider:
+--- !u!136 &2821035670967882306
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -276,10 +275,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 9103772109142540465, guid: f2f568fea142cd740827e9220ca65c4f, type: 3}
+  m_Radius: 0.0009169184
+  m_Height: 0.0025
+  m_Direction: 2
+  m_Center: {x: -0.0000014234975, y: 0.00008982298, z: 0.0013930089}
 --- !u!1 &7001140164996442266
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +290,7 @@ GameObject:
   - component: {fileID: 2738478296109758804}
   - component: {fileID: 8028661155411047424}
   - component: {fileID: 1245750111816874844}
-  - component: {fileID: 7001140164996442267}
+  - component: {fileID: 4741671239086870289}
   m_Layer: 8
   m_Name: Camera Button
   m_TagString: Untagged
@@ -362,8 +361,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7001140164996442267
-MeshCollider:
+--- !u!65 &4741671239086870289
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -372,10 +371,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8395277858498560493, guid: f2f568fea142cd740827e9220ca65c4f, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.00035718147, y: 0.00011640845, z: 0.00033969965}
+  m_Center: {x: -0.0009895616, y: 0.0013604593, z: 0.000068127454}
 --- !u!1 &7068472846049011105
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,7 +419,7 @@ GameObject:
   - component: {fileID: 948711353982402745}
   - component: {fileID: 2736742457072011894}
   - component: {fileID: 8138724974674848910}
-  - component: {fileID: 7939924593702096541}
+  - component: {fileID: 806926344644191312}
   m_Layer: 8
   m_Name: Camera
   m_TagString: Untagged
@@ -493,8 +491,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7939924593702096541
-MeshCollider:
+--- !u!65 &806926344644191312
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -503,7 +501,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3967848542767632393, guid: f2f568fea142cd740827e9220ca65c4f, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.0036668237, y: 0.0029525075, z: 0.0010931538}
+  m_Center: {x: -0.0000014235266, y: 0.0003310243, z: 0.00006812744}

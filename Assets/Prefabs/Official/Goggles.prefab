@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8466154385842990031}
-  - component: {fileID: 1841192747531495966}
   - component: {fileID: 7264779840474068608}
   - component: {fileID: 3658383647248408535}
+  - component: {fileID: 6152720717723960742}
   m_Layer: 8
   m_Name: Goggles
   m_TagString: Object
@@ -34,20 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1841192747531495966
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1341163975024136889}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8485970674117699935, guid: f47481d43012db948ba673e6c9eb2b50, type: 3}
 --- !u!54 &7264779840474068608
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -84,8 +70,21 @@ MonoBehaviour:
   ptsOnBrake: 10
   pts1stPlayerHit: 10
   pts2ndPlayerHit: 5
-  held: 0
-  thrown: 0
+  m_Held: 0
+  m_Thrown: 0
+--- !u!65 &6152720717723960742
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341163975024136889}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.44, y: 0.23, z: 0.18}
+  m_Center: {x: 0, y: 0, z: 0.04}
 --- !u!1 &2972930831165578483
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,7 +96,7 @@ GameObject:
   - component: {fileID: 1250773545786387496}
   - component: {fileID: 4531045325586417948}
   - component: {fileID: 7265239294795936532}
-  - component: {fileID: 4294442577573153024}
+  - component: {fileID: 5444572715730433261}
   m_Layer: 8
   m_Name: Glasses
   m_TagString: Untagged
@@ -170,8 +169,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4294442577573153024
-MeshCollider:
+--- !u!65 &5444572715730433261
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -180,10 +179,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8485970674117699935, guid: f47481d43012db948ba673e6c9eb2b50, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.5111015, y: 0.17489713, z: 0.18958296}
+  m_Center: {x: 0.000044718385, y: 0, z: 0.039395444}
 --- !u!1 &3547095457007066446
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,7 +225,7 @@ GameObject:
   - component: {fileID: 742527073634197756}
   - component: {fileID: 1310810977374244785}
   - component: {fileID: 6977512729419592801}
-  - component: {fileID: 7193849435986160696}
+  - component: {fileID: 3367705985407842391}
   m_Layer: 8
   m_Name: Strap
   m_TagString: Untagged
@@ -298,8 +296,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7193849435986160696
-MeshCollider:
+--- !u!65 &3367705985407842391
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -308,10 +306,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4518408907681202675, guid: f47481d43012db948ba673e6c9eb2b50, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.488007, y: 0.03038247, z: 0.16072464}
+  m_Center: {x: -0.000802882, y: -0.0000000023283064, z: -0.11602734}
 --- !u!1 &8852618603707959707
 GameObject:
   m_ObjectHideFlags: 0
