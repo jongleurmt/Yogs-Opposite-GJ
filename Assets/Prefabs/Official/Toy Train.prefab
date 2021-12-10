@@ -268,23 +268,20 @@ MonoBehaviour:
   children:
   - {fileID: 1968902430374381617}
   - {fileID: 261865152198837549}
-  - {fileID: 1630766435346058342}
   - {fileID: 6113048221913139644}
   - {fileID: 165020784027539114}
   - {fileID: 3717031540849174255}
+  - {fileID: 6126368080871108479}
   - {fileID: 2978643398967757142}
-  - {fileID: 9209962974872299124}
   - {fileID: 8234639113356338363}
   - {fileID: 6212487483750257366}
-  - {fileID: 6951119401871306275}
-  - {fileID: 6126368080871108479}
   Damage: 2
   Weight: 1
   ptsOnBrake: 100
   pts1stPlayerHit: 50
   pts2ndPlayerHit: 20
-  held: 0
-  thrown: 0
+  m_Held: 0
+  m_Thrown: 0
 --- !u!1 &1630766435346058342
 GameObject:
   m_ObjectHideFlags: 0
