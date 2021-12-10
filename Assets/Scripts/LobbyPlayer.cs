@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LobbyPlayer : PlayerControllerBase
@@ -17,20 +15,30 @@ public class LobbyPlayer : PlayerControllerBase
     private Vector3 m_DefaultPosition;
     private Quaternion m_DefaultRotation;
 
-    private bool m_IsConfirmed = false;
+    private bool m_IsReady = false;
+
+    [SerializeField]
+    private GameObject m_RegisteredText;
+
+    [SerializeField]
+    private GameObject m_ReadyText;
 
     void Awake()
     {
-        m_Rigidbody = GetComponent<Rigidbody>();
         m_LobbyManager = FindObjectOfType<LobbyManager>();
 
+        m_Rigidbody = GetComponent<Rigidbody>();
         m_DefaultPosition = m_Rigidbody.position;
         m_DefaultRotation = m_Rigidbody.rotation;
+        m_Rigidbody.isKinematic = true;
+
+        m_ReadyText.SetActive(false);
+        m_RegisteredText.SetActive(false);
     }
 
     void Update()
     {
-        if (transform.position.y > 10)
+        if (transform.position.y > 15)
             Despawn();
     }
 
@@ -41,28 +49,44 @@ public class LobbyPlayer : PlayerControllerBase
         m_Rigidbody.MovePosition(m_DefaultPosition);
         m_Rigidbody.MoveRotation(m_DefaultRotation);
 
-        gameObject.SetActive(false);
+        m_Rigidbody.isKinematic = true;
     }
     
     // Confirm
-    protected override void Jump()
+    protected override void Interact()
     {
-        m_LobbyManager.ConfirmPlayer(ID);
-        m_IsConfirmed = true;
+        if (!m_IsReady)
+        {
+            m_LobbyManager.ConfirmPlayer(ID);
+            m_IsReady = true;
+
+            m_ReadyText.SetActive(true);
+            m_RegisteredText.SetActive(false);
+        }
     }
 
     // Disconnect
     protected override void Melee()
     {
-        if (m_IsConfirmed)
+        m_ReadyText.SetActive(false);
+        if (m_IsReady)
         {
-            m_IsConfirmed = false;
+            m_IsReady = false;
+            m_RegisteredText.SetActive(true);
         }
         else
         {
+            m_RegisteredText.SetActive(false);
             m_Rigidbody.AddForce(m_EjectForce, ForceMode.Impulse);
         }
         
         m_LobbyManager.CancelPlayer(ID);
+    }
+
+    public void Enable()
+    {
+        m_Rigidbody.isKinematic = false;
+        m_ReadyText.SetActive(false);
+        m_RegisteredText.SetActive(true);
     }
 }

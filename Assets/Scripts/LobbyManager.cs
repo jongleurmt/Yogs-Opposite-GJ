@@ -1,23 +1,31 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LobbyManager : MonoBehaviour
 {
     public enum PlayerState { Registered, Ready }
 
     [SerializeField]
-    private GameObject[] m_PlayerObjects = { };
-
-    [SerializeField]
-    private LobbyPlayer[] m_Players = { };
+    private LobbyPlayer[] m_PlayerControls = { };
 
     protected Dictionary<int, PlayerState> m_PlayerStates = new Dictionary<int, PlayerState>();
+
+    [SerializeField]
+    private GameObject m_Countdown = null;
+
+    [SerializeField]
+    private Text m_CountdownText = null;
+
+    private Coroutine m_CountdownRoutine = null;
 
     // Syncs with the player manager.
     void Start()
     {
         PlayerManager.Instance.OnPlayerJoined.AddListener(OnPlayerJoined);
-        foreach (GameObject camera in m_PlayerObjects) camera.SetActive(false);
+        m_Countdown.SetActive(false);
     }
 
     // Desyncs with the player manager.
@@ -30,16 +38,23 @@ public class LobbyManager : MonoBehaviour
     void OnPlayerJoined(PlayerInfo playerInfo)
     {
         // Stop if not enough objects!
-        if (m_PlayerObjects.Length <= playerInfo.ID) return;
+        if (m_PlayerControls.Length <= playerInfo.ID) return;
 
         // Activate the player.
-        m_PlayerObjects[playerInfo.ID].SetActive(true);
-        m_Players[playerInfo.ID].Bind(playerInfo.Input);
+        m_PlayerControls[playerInfo.ID].Enable();
+        m_PlayerControls[playerInfo.ID].Bind(playerInfo.Input);
         
         int index = playerInfo.ID;
 
         if (m_PlayerStates.ContainsKey(index)) return;
         m_PlayerStates.Add(index, PlayerState.Registered);
+
+
+        if (m_CountdownRoutine != null)
+        {
+            StopCoroutine(m_CountdownRoutine);
+            m_Countdown.SetActive(false);
+        }
     }
 
     // Cancels a player.
@@ -62,19 +77,38 @@ public class LobbyManager : MonoBehaviour
             // Check if the rest are still confirmed.
             CheckPlayers();
         }
+
+        if (m_CountdownRoutine != null)
+        {
+            StopCoroutine(m_CountdownRoutine);
+            m_Countdown.SetActive(false);
+        }
     }
 
     // Checks the status of the players.
     protected void CheckPlayers()
     {
         // Do nothing if there are no players.
-        if (m_PlayerStates.Count == 0) return;
+        if (m_PlayerStates.Count < 2) return;
 
         // Do nothing if any player isn't ready.
         foreach (PlayerState state in m_PlayerStates.Values)
             if (!state.Equals(PlayerState.Ready)) return;
 
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+        m_CountdownRoutine = StartCoroutine(Countdown());
+        IEnumerator Countdown()
+        {
+            m_Countdown.SetActive(true);
+            for (int t = 3; t > -1; t--)
+            {
+                if (t > 0) m_CountdownText.text = t.ToString();
+                else m_CountdownText.text = "GO!";
+                
+                yield return new WaitForSeconds(1f);
+            }
+            
+            SceneManager.LoadScene("Player_Test");
+        }
     }
 
     public void ConfirmPlayer(int id)

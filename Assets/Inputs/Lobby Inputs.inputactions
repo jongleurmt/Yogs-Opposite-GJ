@@ -1,5 +1,5 @@
 {
-    "name": "Lobby Actions",
+    "name": "Lobby Inputs",
     "maps": [
         {
             "name": "Lobby",
@@ -29,7 +29,7 @@
                 {
                     "name": "",
                     "id": "1b72f124-2d7a-4e06-bc1a-0fb316298acf",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

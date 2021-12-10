@@ -29,14 +29,10 @@ public class Timer : MonoBehaviour
         IEnumerator Countdown()
         {
             m_CountdownContainer.SetActive(true);
-            
-            for (int timer = 3; timer > 0; timer--)
-            {
-                m_CountdownText.text = timer.ToString();
-                yield return new WaitForSeconds(1f);
-            }
-            
-            m_CountdownText.text = "YEET";
+
+            m_CountdownText.text = "READY?";
+            yield return new WaitForSeconds(1f);
+            m_CountdownText.text = "YEET!";
             yield return new WaitForSeconds(1f);
 
             m_IsTimerRunning = true;
