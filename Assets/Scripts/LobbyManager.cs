@@ -25,6 +25,7 @@ public class LobbyManager : MonoBehaviour
     void Start()
     {
         PlayerManager.Instance.OnPlayerJoined.AddListener(OnPlayerJoined);
+        PlayerManager.Instance.Clear();
         m_Countdown.SetActive(false);
     }
 
@@ -103,11 +104,11 @@ public class LobbyManager : MonoBehaviour
             {
                 if (t > 0) m_CountdownText.text = t.ToString();
                 else m_CountdownText.text = "GO!";
-                
+
                 yield return new WaitForSeconds(1f);
             }
             
-            SceneManager.LoadScene("Player_Test");
+            SceneManager.LoadScene("Game");
         }
     }
 

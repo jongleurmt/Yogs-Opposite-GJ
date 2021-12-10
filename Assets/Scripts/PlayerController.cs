@@ -62,7 +62,10 @@ public class PlayerController : PlayerControllerBase
 
     // The crown object.
     [SerializeField]
-    private GameObject m_Crown;
+    private GameObject m_Crown = null;
+
+    [SerializeField]
+    private ParticleSystem m_JumpParticles = null;
 
     // The list of players triggered.
     private List<PlayerController> m_PlayerList = new List<PlayerController>();
@@ -195,6 +198,8 @@ public class PlayerController : PlayerControllerBase
     {
         if (m_IsGrounded)
             m_Rigidbody.AddForce(Vector3.up * m_JumpForce, ForceMode.Impulse);
+        
+        m_JumpParticles.Play();
     }
 
     // Melee handler.

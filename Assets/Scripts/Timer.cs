@@ -17,9 +17,16 @@ public class Timer : MonoBehaviour
     [SerializeField]
     private GameObject m_CountdownContainer = null;
 
+    private MatchManager m_Manager = null;
+
     private float m_CurrentTime;
 
     private bool m_IsTimerRunning = false;
+
+    void Awake()
+    {
+        m_Manager = FindObjectOfType<MatchManager>();
+    }
 
     void Start()
     {
@@ -49,6 +56,10 @@ public class Timer : MonoBehaviour
         {
             m_CurrentTime = 0;
             m_IsTimerRunning = false;
+
+            if (m_Manager != null)
+                m_Manager.OnGameEnd.Invoke();
+
             enabled = false;
         }
 

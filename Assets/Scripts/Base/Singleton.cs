@@ -22,7 +22,7 @@ public abstract class Singleton<T> : MonoBehaviour
         }
         else
         {
-            DestroyImmediate(this, true);
+            DestroyImmediate(gameObject, true);
         }
     }
 

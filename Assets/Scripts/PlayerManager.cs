@@ -114,4 +114,11 @@ public class PlayerManager : Singleton<PlayerManager>
         if (m_Players.Count == 4)
             DisableJoining();
     }
+
+    public void Clear()
+    {
+        PlayerInfo[] infos = m_Players.Values.ToArray();
+        foreach (PlayerInfo info in infos)
+            DeregisterInput(info.Input);
+    }
 }

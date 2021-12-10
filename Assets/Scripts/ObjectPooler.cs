@@ -54,6 +54,7 @@ public class ObjectPooler : MonoBehaviour
             return null;
         }
 
+        if (poolDictionary[tag].Count == 0) return null;
         GameObject objectToSpawn = poolDictionary[tag].Dequeue();
 
         objectToSpawn.SetActive(true);

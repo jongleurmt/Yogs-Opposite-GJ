@@ -23,6 +23,9 @@ public class LobbyPlayer : PlayerControllerBase
     [SerializeField]
     private GameObject m_ReadyText;
 
+    [SerializeField]
+    private ParticleSystem m_ParticleSystem;
+
     void Awake()
     {
         m_LobbyManager = FindObjectOfType<LobbyManager>();
@@ -34,6 +37,7 @@ public class LobbyPlayer : PlayerControllerBase
 
         m_ReadyText.SetActive(false);
         m_RegisteredText.SetActive(false);
+        m_ParticleSystem.Stop();
     }
 
     void Update()
@@ -48,6 +52,7 @@ public class LobbyPlayer : PlayerControllerBase
         m_Rigidbody.angularVelocity = Vector3.zero;
         m_Rigidbody.MovePosition(m_DefaultPosition);
         m_Rigidbody.MoveRotation(m_DefaultRotation);
+        m_ParticleSystem.Stop();
 
         m_Rigidbody.isKinematic = true;
     }
@@ -77,6 +82,7 @@ public class LobbyPlayer : PlayerControllerBase
         else
         {
             m_RegisteredText.SetActive(false);
+            m_ParticleSystem.Play();
             m_Rigidbody.AddForce(m_EjectForce, ForceMode.Impulse);
         }
         

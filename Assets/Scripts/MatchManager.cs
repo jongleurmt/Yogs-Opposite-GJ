@@ -1,8 +1,11 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MatchManager : MonoBehaviour
 {
@@ -19,6 +22,11 @@ public class MatchManager : MonoBehaviour
     // The set king event.
     public UnityEvent<int> SetRoyal { get; private set; } = new UnityEvent<int>();
 
+    public UnityEvent OnGameEnd { get; private set; } = new UnityEvent();
+
+    [SerializeField]
+    private Text m_WinnerText = null;
+
     void Awake()
     {
         PlayerInput[] inputs = GameObject.FindObjectsOfType<PlayerInput>().OrderBy(input => input.playerIndex).ToArray();
@@ -34,11 +42,14 @@ public class MatchManager : MonoBehaviour
 
             player.Bind(input);
         }
+
+        OnGameEnd.AddListener(GameEnd);
     }
 
     void Start()
     {
         SetRoyal.Invoke(-1);
+        m_WinnerText.text = "";
     }
 
     public void SetPlayerScore(int playerIndex, int score)
@@ -66,5 +77,34 @@ public class MatchManager : MonoBehaviour
         }
 
         SetRoyal.Invoke(firstPlayer);
+    }
+
+    void GameEnd()
+    {
+        int highestScore = -100;
+        int firstPlayer = -1;
+
+        foreach (KeyValuePair<int, int> scoreData in m_PlayerScores)
+        {
+            if (scoreData.Value > highestScore)
+            {
+                highestScore = scoreData.Value;
+                firstPlayer = scoreData.Key;
+            }
+            else if (scoreData.Value == highestScore)
+            {
+                firstPlayer = -1;
+                break;
+            }
+        }
+
+        m_WinnerText.text = $"Player {firstPlayer} wins!";
+
+        StartCoroutine(GoBack());
+        IEnumerator GoBack()
+        {
+            yield return new WaitForSeconds(2f);
+            SceneManager.LoadScene("Title_Screen");
+        }
     }
 }
