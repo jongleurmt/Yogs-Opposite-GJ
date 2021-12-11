@@ -368,10 +368,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.0003
-  m_Height: 0.007
+  m_Radius: 0.0007326242
+  m_Height: 0.018096117
   m_Direction: 0
-  m_Center: {x: -0.0014577054, y: 0.00000522191, z: 0.00027689635}
+  m_Center: {x: -0.0036442636, y: 0.000013055206, z: 0.0010871233}
 --- !u!1 &2712909683440942830
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,9 +383,10 @@ GameObject:
   - component: {fileID: 926494417839290181}
   - component: {fileID: 3532135887950832544}
   - component: {fileID: 1383229181883019744}
+  - component: {fileID: 3112752544610851437}
   m_Layer: 8
   m_Name: Shark
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -443,6 +444,20 @@ MonoBehaviour:
   pts2ndPlayerHit: 20
   m_Held: 0
   m_Thrown: 0
+--- !u!136 &3112752544610851437
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2712909683440942830}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.61508316
+  m_Height: 1.9506456
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.20975536, z: -0.0061692595}
 --- !u!1 &3170026219010931909
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,10 +640,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.003995876
-  m_Height: 0.0050157267
-  m_Direction: 1
-  m_Center: {x: -0.001728756, y: 0, z: 0.0008589668}
+  m_Radius: 0.0059851944
+  m_Height: 0.019561201
+  m_Direction: 2
+  m_Center: {x: -0.0023149012, y: -6.1205476e-18, z: 0.0021512902}
 --- !u!1 &5080667264316858436
 GameObject:
   m_ObjectHideFlags: 0
