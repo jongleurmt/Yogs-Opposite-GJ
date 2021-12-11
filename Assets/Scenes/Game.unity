@@ -6557,7 +6557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 634e277c31d9b488984f5dc2c9cca27c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MaxTime: 10
+  m_MaxTime: 180
   m_DisplayText: {fileID: 2080620112}
   m_CountdownText: {fileID: 1894334718}
   m_CountdownContainer: {fileID: 1041027529}
