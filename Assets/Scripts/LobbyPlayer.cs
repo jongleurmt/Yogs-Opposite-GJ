@@ -26,9 +26,13 @@ public class LobbyPlayer : PlayerControllerBase
     [SerializeField]
     private ParticleSystem m_ParticleSystem;
 
+    private AudioSource m_AudioSource;
+
     void Awake()
     {
         m_LobbyManager = FindObjectOfType<LobbyManager>();
+
+        m_AudioSource = GetComponent<AudioSource>();
 
         m_Rigidbody = GetComponent<Rigidbody>();
         m_DefaultPosition = m_Rigidbody.position;
@@ -82,7 +86,10 @@ public class LobbyPlayer : PlayerControllerBase
         else
         {
             m_RegisteredText.SetActive(false);
+            
             m_ParticleSystem.Play();
+            m_AudioSource.pitch = Random.Range(0.5f, 1.15f);
+            m_AudioSource.Play();
             m_Rigidbody.AddForce(m_EjectForce, ForceMode.Impulse);
         }
         

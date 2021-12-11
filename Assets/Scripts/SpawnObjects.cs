@@ -1,13 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class SpawnObjects : MonoBehaviour
 {
+    [SerializeField]
+    private Transform[] m_LaunchPoints = { };
+    
     //public GameObject[] items;
     public Transform maxX, minX, maxZ, minZ, topY;
     public int minAmount, maxAmount;
     public int offset;
+
+    [SerializeField]
+    private int m_ItemsPerSpawn = 2;
+
+    [SerializeField]
+    private float m_SpawnTimer = 5f;
 
     private float _Timer;
 
@@ -23,15 +33,14 @@ public class SpawnObjects : MonoBehaviour
     {
         _Timer += Time.deltaTime;
 
-        if (_Timer > 30f)
+        if (_Timer >= m_SpawnTimer)
         {
-            spawnItems();
-            Debug.Log("Pooling");
-            _Timer = 0;
+            SpawnItem();
+            _Timer = 0f;
         }
     }
 
-    public void spawnItems()
+    private void SpawnItems()
     {
         int amount = Random.Range(minAmount, maxAmount);
 
@@ -48,6 +57,23 @@ public class SpawnObjects : MonoBehaviour
             objectPooler.SpawnFromPool(objectPooler.pools[itemRand].tag, newPosition, Quaternion.identity);
 
             //Instantiate(items[itemRand], new Vector3(randX, topY.position.y, randZ), Quaternion.identity);
+        }
+    }
+
+    private void SpawnItem()
+    {
+        List<Transform> availableLaunchPoints = new List<Transform>(m_LaunchPoints);
+        for (int i = 0; i < m_ItemsPerSpawn; i++)
+        {
+            int pointIndex = Random.Range(0, availableLaunchPoints.Count);
+            int itemIndex = Random.Range(0, objectPooler.pools.Count);
+
+            Transform point = availableLaunchPoints[pointIndex];
+
+            GameObject item = objectPooler.SpawnFromPool(objectPooler.pools[itemIndex].tag, point.position, point.rotation);
+            item.GetComponent<ObjectEffect>()?.Throw();
+
+            availableLaunchPoints.RemoveAt(pointIndex);
         }
     }
 }

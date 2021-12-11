@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -29,6 +30,26 @@ public class PlayerController : PlayerControllerBase
     
     [SerializeField]
     private Collider m_BoxCastCollider = null;
+
+    // The crown object.
+    [SerializeField]
+    private GameObject m_Crown = null;
+
+    [Header("Audio")]
+    private AudioSource m_AudioSource = null;
+
+    [SerializeField]
+    private AudioClip m_JumpClip = null;
+
+    [SerializeField]
+    private AudioClip m_FartClip = null;
+
+    [SerializeField]
+    private AudioClip m_ThrowClip = null;
+
+
+    [SerializeField]
+    private AudioClip m_HitClip = null;
 
     // The character animator.
     private Animator m_Animator;
@@ -60,12 +81,14 @@ public class PlayerController : PlayerControllerBase
     // The player score.
     private int m_Score = 0;
 
-    // The crown object.
-    [SerializeField]
-    private GameObject m_Crown = null;
+    private Text m_ScoreText = null;
 
+    [Header("Particles")]
     [SerializeField]
     private ParticleSystem m_JumpParticles = null;
+
+    [SerializeField]
+    private ParticleSystem m_RoyalParticles = null;
 
     // The list of players triggered.
     private List<PlayerController> m_PlayerList = new List<PlayerController>();
@@ -77,6 +100,7 @@ public class PlayerController : PlayerControllerBase
     {
         m_Rigidbody = GetComponent<Rigidbody>();
         m_Animator = GetComponentInChildren<Animator>();
+        m_AudioSource = GetComponent<AudioSource>();
 
         m_Manager = FindObjectOfType<MatchManager>();
         m_Manager.SetRoyal.AddListener(SetRoyal);
@@ -127,6 +151,14 @@ public class PlayerController : PlayerControllerBase
         {
             m_IsGrounded = true;
             m_Animator.SetBool("IsGrounded", m_IsGrounded);
+        }
+        else if (collision.gameObject.tag == "Object")
+        {
+            ObjectEffect objectEffect = collision.gameObject.GetComponent<ObjectEffect>();
+            if (objectEffect == null) return;
+            if (objectEffect.SourcePlayer == null) return;
+            
+            objectEffect.SourcePlayer.AddScore(objectEffect.pts1stPlayerHit);
         }
     }
 
@@ -196,9 +228,12 @@ public class PlayerController : PlayerControllerBase
     // Jump handler.
     protected override void Jump()
     {
-        if (m_IsGrounded)
-            m_Rigidbody.AddForce(Vector3.up * m_JumpForce, ForceMode.Impulse);
+        if (!m_IsGrounded) return;
         
+        m_AudioSource.clip = Random.value > 0.9f ? m_FartClip : m_JumpClip;
+        m_AudioSource.Play();
+
+        m_Rigidbody.AddForce(Vector3.up * m_JumpForce, ForceMode.Impulse);
         m_JumpParticles.Play();
     }
 
@@ -209,14 +244,22 @@ public class PlayerController : PlayerControllerBase
 
         foreach (PlayerController controller in m_PlayerList)
         {
-            AddScore(10);
+            AddScore(m_ObjectHeld.pts1stPlayerHit);
             controller.StartInvincibility();
         }
 
         // Dent the object once for all players hit.
         if (m_PlayerList.Count > 0)
         {
-            m_ObjectHeld.Dent(true);
+            m_AudioSource.clip = m_HitClip;
+            m_AudioSource.Play();
+            
+            bool isStillAlive = m_ObjectHeld.Dent(true);
+            if (!isStillAlive)
+            {
+                AddScore(m_ObjectHeld.ptsOnBrake);
+                Drop();
+            }
         }
 
         m_Animator.SetTrigger("Melee");
@@ -228,6 +271,8 @@ public class PlayerController : PlayerControllerBase
         if (m_ObjectHeld == null) return;
 
         m_ObjectHeld.Throw();
+        m_AudioSource.clip = m_ThrowClip;
+        m_AudioSource.Play();
         Drop();
     }
 
@@ -260,7 +305,9 @@ public class PlayerController : PlayerControllerBase
     public void AddScore(int value)
     {
         m_Score += value;
+
         if (m_Manager != null) m_Manager.SetPlayerScore(ID, m_Score);
+        if (m_ScoreText != null) m_ScoreText.text = m_Score.ToString();
     }
 
     public void ReduceScore(int value)
@@ -272,5 +319,9 @@ public class PlayerController : PlayerControllerBase
     protected void SetRoyal(int playerIndex)
     {
         m_Crown?.SetActive(playerIndex == ID);
+        m_RoyalParticles?.Play();
     }
+
+    public void SetScoreText(Text value)
+        => m_ScoreText = value;
 }

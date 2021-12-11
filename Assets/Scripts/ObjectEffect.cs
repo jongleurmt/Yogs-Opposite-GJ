@@ -26,6 +26,7 @@ public class ObjectEffect : MonoBehaviour
     public bool WasThrown => m_Thrown;
 
     private PlayerController m_SourcePlayer = null;
+    public PlayerController SourcePlayer => m_SourcePlayer;
 
     private void Awake()
     {
@@ -120,7 +121,7 @@ public class ObjectEffect : MonoBehaviour
         }
     }
 
-    public void Dent(bool deathFling = false)
+    public bool Dent(bool deathFling = false)
     {
         m_Health--;
         if (m_Health <= 0)
@@ -148,6 +149,9 @@ public class ObjectEffect : MonoBehaviour
             // subtrect 1 to items amount in game manager
             gameObject.layer = LayerMask.NameToLayer("InvinciblePlayer");
             Destroy(this.gameObject, 8f);
+
+            return true;
         }
-}
+        return false;
+    }
 }

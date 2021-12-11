@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectPooler : MonoBehaviour
+public class ObjectPooler : Singleton<ObjectPooler>
 {
     [System.Serializable]
     public class Pool
@@ -12,25 +12,18 @@ public class ObjectPooler : MonoBehaviour
         public int size;
     }
 
-    #region Singleton
+    [SerializeField]
+    private List<Pool> m_Pools = new List<Pool>();
+    public List<Pool> pools => m_Pools;
 
-    public static ObjectPooler Instance;
+    [SerializeField]
+    private Transform m_ObjectParent = null;
 
-    private void Awake()
-    {
-        Instance = this;
-    }
-
-    #endregion
-
-    public List<Pool> pools;
-    public Dictionary<string, Queue<GameObject>> poolDictionary;
+    private Dictionary<string, Queue<GameObject>> m_PoolDictionary = new Dictionary<string, Queue<GameObject>>();
 
     // Start is called before the first frame update
     void Start()
     {
-        poolDictionary = new Dictionary<string, Queue<GameObject>>();
-
         foreach (Pool pool in pools)
         {
             Queue<GameObject> objectPool = new Queue<GameObject>();
@@ -39,29 +32,30 @@ public class ObjectPooler : MonoBehaviour
             {
                 GameObject obj = Instantiate(pool.prefab);
                 objectPool.Enqueue(obj);
+                obj.transform.SetParent(m_ObjectParent);
                 obj.SetActive(false);
             }
 
-            poolDictionary.Add(pool.tag, objectPool);
+            m_PoolDictionary.Add(pool.tag, objectPool);
         }
     }
 
     public GameObject SpawnFromPool(string tag, Vector3 position, Quaternion rotation)
     {
-        if (!poolDictionary.ContainsKey(tag))
+        if (!m_PoolDictionary.ContainsKey(tag))
         {
             Debug.LogWarning("Pool with tag " + tag + " doesn't exist.");
             return null;
         }
 
-        if (poolDictionary[tag].Count == 0) return null;
-        GameObject objectToSpawn = poolDictionary[tag].Dequeue();
+        if (m_PoolDictionary[tag].Count == 0) return null;
+        GameObject objectToSpawn = m_PoolDictionary[tag].Dequeue();
 
         objectToSpawn.SetActive(true);
         objectToSpawn.transform.position = position;
         objectToSpawn.transform.rotation = rotation;
 
-        poolDictionary[tag].Enqueue(objectToSpawn);
+        m_PoolDictionary[tag].Enqueue(objectToSpawn);
 
         return objectToSpawn;
     }

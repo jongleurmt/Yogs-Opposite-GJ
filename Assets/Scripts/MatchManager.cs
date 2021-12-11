@@ -16,6 +16,9 @@ public class MatchManager : MonoBehaviour
     [SerializeField]
     private Transform[] m_SpawnPoints = {};
 
+    [SerializeField]
+    private Text[] m_ScoreText = {};
+
     // The player scores.
     private Dictionary<int, int> m_PlayerScores = new Dictionary<int, int>();
 
@@ -30,6 +33,7 @@ public class MatchManager : MonoBehaviour
     void Awake()
     {
         PlayerInput[] inputs = GameObject.FindObjectsOfType<PlayerInput>().OrderBy(input => input.playerIndex).ToArray();
+        List<Text> scoreTextUsed = new List<Text>();
         
         foreach (PlayerInput input in inputs)
         {
@@ -38,9 +42,17 @@ public class MatchManager : MonoBehaviour
             Vector3 pos = m_SpawnPoints[input.playerIndex].position;
 
             PlayerController player = Instantiate(m_Controllers[input.playerIndex], pos, Quaternion.identity);
+            player.SetScoreText(m_ScoreText[input.playerIndex]);
+            scoreTextUsed.Add(m_ScoreText[input.playerIndex]);
             m_SpawnedPlayers.Add(player);
 
             player.Bind(input);
+        }
+
+        foreach (Text scoreText in m_ScoreText)
+        {
+            if (scoreTextUsed.Contains(scoreText)) continue;
+            scoreText.text = "Not Playing";
         }
 
         OnGameEnd.AddListener(GameEnd);
