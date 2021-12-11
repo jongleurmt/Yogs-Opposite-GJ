@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7322679026931567378}
   - component: {fileID: 2238153776375440675}
   - component: {fileID: 3565858048365932023}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shark_fin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 89333237358608879}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shark_Soft_toy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 934640987396065628}
   - component: {fileID: 7175301326002224829}
   - component: {fileID: 7094487634802222687}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shark_Back_Hole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 2029190662765541293}
   - component: {fileID: 7239339535079869367}
   - component: {fileID: 1583605468676035067}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shark_mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 8527459290742676334}
   - component: {fileID: 1722155263586873496}
   - component: {fileID: 6308013151825982442}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shark_harpoon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 926494417839290181}
   - component: {fileID: 3532135887950832544}
   - component: {fileID: 1383229181883019744}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,7 +443,6 @@ MonoBehaviour:
   pts2ndPlayerHit: 20
   m_Held: 0
   m_Thrown: 0
-  Spawn: {fileID: 4705048236986687073, guid: 57ddb6009c69d5d43b34c2b310c9a364, type: 3}
 --- !u!1 &3170026219010931909
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,7 +454,7 @@ GameObject:
   - component: {fileID: 315924669078019124}
   - component: {fileID: 3573150689006325923}
   - component: {fileID: 1017540282301046865}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shark_eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -538,7 +537,7 @@ GameObject:
   - component: {fileID: 4623810318050318448}
   - component: {fileID: 6406766791335492174}
   - component: {fileID: 2977054211826959201}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shark_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -641,7 +640,7 @@ GameObject:
   - component: {fileID: 9016470610517051961}
   - component: {fileID: 6529473714556667883}
   - component: {fileID: 8005885096952435810}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shark_tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -722,7 +721,7 @@ GameObject:
   - component: {fileID: 2575168234027988118}
   - component: {fileID: 1991985941986206191}
   - component: {fileID: 3544309878870478149}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shark_arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -803,7 +802,7 @@ GameObject:
   - component: {fileID: 5274916881498217342}
   - component: {fileID: 3318852401272182558}
   - component: {fileID: 8345020211353894809}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shark_Front_Hole
   m_TagString: Untagged
   m_Icon: {fileID: 0}

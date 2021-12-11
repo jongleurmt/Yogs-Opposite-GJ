@@ -108,6 +108,9 @@ public class LobbyManager : MonoBehaviour
                 yield return new WaitForSeconds(1f);
             }
             
+            foreach (LobbyPlayer player in m_PlayerControls)
+                player.Unbind();
+                
             SceneManager.LoadScene("Game");
         }
     }

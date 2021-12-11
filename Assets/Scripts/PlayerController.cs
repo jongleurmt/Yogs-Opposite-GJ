@@ -60,9 +60,6 @@ public class PlayerController : PlayerControllerBase
     // The invincibility boolean.
     private bool m_IsInvincible = false;
 
-    // Whether or not the player is grounded.
-    private bool m_IsGrounded = true;
-
     // The input direction vectors.
     private Vector3 m_Direction = Vector3.zero;
 
@@ -120,11 +117,16 @@ public class PlayerController : PlayerControllerBase
         SetRoyal(-1);
     }
 
+    void Update()
+    {
+        m_Animator.SetBool("IsGrounded", IsGrounded());
+    }
+
     // Physics handling.
     void FixedUpdate()
     {
         // Fall handler.
-        if (m_Rigidbody.velocity.y < 0 && !m_IsGrounded)
+        if (m_Rigidbody.velocity.y < 0 && !IsGrounded())
             m_Rigidbody.drag = m_DescentDrag;
         else
             m_Rigidbody.drag = m_DefaultDrag;
@@ -147,28 +149,13 @@ public class PlayerController : PlayerControllerBase
     // Collision Detection.
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
-        {
-            m_IsGrounded = true;
-            m_Animator.SetBool("IsGrounded", m_IsGrounded);
-        }
-        else if (collision.gameObject.tag == "Object")
+        if (collision.gameObject.tag == "Object")
         {
             ObjectEffect objectEffect = collision.gameObject.GetComponent<ObjectEffect>();
             if (objectEffect == null) return;
             if (objectEffect.SourcePlayer == null) return;
-            
-            objectEffect.SourcePlayer.AddScore(objectEffect.pts1stPlayerHit);
-        }
-    }
 
-    // Collision detection.
-    void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
-        {
-            m_IsGrounded = false;
-            m_Animator.SetBool("IsGrounded", m_IsGrounded);
+            objectEffect.SourcePlayer.AddScore(objectEffect.pts1stPlayerHit);
         }
     }
 
@@ -205,10 +192,13 @@ public class PlayerController : PlayerControllerBase
         if (m_ObjectHeld == null)
         {
             Vector3 halfExtents = m_BoxCastCollider.bounds.extents;
+            Vector3 boxSource = transform.position + Vector3.up * halfExtents.y * 0.5f;
             float distance = Vector3.Distance(transform.position, m_BoxCastCollider.transform.position) * 2f;
             RaycastHit hit;
+            
+            halfExtents.z = 0.1f; // fixes the objects picking up from far away.
 
-            if (Physics.BoxCast(transform.position, halfExtents, transform.forward, out hit, Quaternion.identity, distance, 1 << LayerMask.NameToLayer("Object")))
+            if (Physics.BoxCast(boxSource, halfExtents, transform.forward, out hit, Quaternion.identity, distance, 1 << LayerMask.NameToLayer("Object")))
             {
                 ObjectEffect oe = hit.collider.GetComponent<ObjectEffect>();
                 if (oe != null)
@@ -221,14 +211,14 @@ public class PlayerController : PlayerControllerBase
         }
         else
         {
-            // drop object?
+            Drop();
         }
     }
 
     // Jump handler.
     protected override void Jump()
     {
-        if (!m_IsGrounded) return;
+        if (!IsGrounded()) return;
         
         m_AudioSource.clip = Random.value > 0.9f ? m_FartClip : m_JumpClip;
         m_AudioSource.Play();
@@ -254,8 +244,8 @@ public class PlayerController : PlayerControllerBase
             m_AudioSource.clip = m_HitClip;
             m_AudioSource.Play();
             
-            bool isStillAlive = m_ObjectHeld.Dent(true);
-            if (!isStillAlive)
+            m_ObjectHeld.Dent(true);
+            if (!m_ObjectHeld.Alive)
             {
                 AddScore(m_ObjectHeld.ptsOnBrake);
                 Drop();
@@ -298,6 +288,7 @@ public class PlayerController : PlayerControllerBase
 
     public void Drop()
     {
+        m_ObjectHeld.Drop();
         m_ObjectHeld = null;
         m_Animator.SetBool("IsHoldingObject", false);
     }
@@ -318,10 +309,18 @@ public class PlayerController : PlayerControllerBase
 
     protected void SetRoyal(int playerIndex)
     {
+        if (m_Crown!.activeSelf && playerIndex == ID) return;
+
         m_Crown?.SetActive(playerIndex == ID);
-        m_RoyalParticles?.Play();
+        if (playerIndex == ID) m_RoyalParticles?.Play();
     }
 
     public void SetScoreText(Text value)
         => m_ScoreText = value;
+    
+    public bool IsGrounded()
+    {
+        Vector3 boxExtents = Vector3.one * 0.5f; boxExtents.z = 0.1f;
+        return Physics.BoxCast(transform.position + Vector3.up, boxExtents, Vector3.down, Quaternion.identity, 1.15f, 1 << LayerMask.NameToLayer("Ground"));
+    }
 }

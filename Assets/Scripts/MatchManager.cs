@@ -116,6 +116,7 @@ public class MatchManager : MonoBehaviour
         IEnumerator GoBack()
         {
             yield return new WaitForSeconds(2f);
+            foreach (PlayerController player in m_SpawnedPlayers) player.Unbind();
             SceneManager.LoadScene("Title_Screen");
         }
     }

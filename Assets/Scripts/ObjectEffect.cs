@@ -14,6 +14,7 @@ public class ObjectEffect : MonoBehaviour
     public WeightValue Weight;
 
     private int m_Health = 3;
+    public bool Alive => m_Health > 0;
 
     public int ptsOnBrake, pts1stPlayerHit, pts2ndPlayerHit;
 
@@ -49,10 +50,7 @@ public class ObjectEffect : MonoBehaviour
     public void PickUp(PlayerController player)
     {
         //if it was picked up by player set held to true
-        foreach(var parts in _coll)
-        {
-            parts.enabled = false;
-        }
+        SetCollidersActive(false);
         _rb.isKinematic = true;
         
         m_SourcePlayer = player;
@@ -86,10 +84,7 @@ public class ObjectEffect : MonoBehaviour
         IEnumerator EnableColliders()
         {
             yield return new WaitForSeconds(0.2f);
-            foreach (var parts in _coll)
-            {
-                parts.enabled = true;
-            }
+            SetCollidersActive(true);
         }
     }
 
@@ -97,8 +92,7 @@ public class ObjectEffect : MonoBehaviour
     {
         if(m_Held)
         {
-            Debug.Log(coll.collider.name);
-            if(coll.collider.tag == "Player")
+                if(coll.collider.tag == "Player")
             {
                 //reduse points from other player and add to the player that trew this objec
                 PlayerController controller = coll.gameObject.GetComponent<PlayerController>();
@@ -121,7 +115,7 @@ public class ObjectEffect : MonoBehaviour
         }
     }
 
-    public bool Dent(bool deathFling = false)
+    public void Dent(bool deathFling = false)
     {
         m_Health--;
         if (m_Health <= 0)
@@ -129,17 +123,11 @@ public class ObjectEffect : MonoBehaviour
             if (deathFling)
                 Throw();
 
-            if (m_Held)
-            {
-                m_SourcePlayer.Drop();
-                m_SourcePlayer = null;
-                transform.SetParent(null);
-            }
-
             //put the code below here else object will be destroyed when spawning
             foreach (var child in children)
             {
-                child.AddComponent<Rigidbody>();
+                if (!child.GetComponent<Rigidbody>())
+                    child.AddComponent<Rigidbody>();
                 child.transform.parent = null;
 
                 child.layer = LayerMask.NameToLayer("InvinciblePlayer");
@@ -149,9 +137,23 @@ public class ObjectEffect : MonoBehaviour
             // subtrect 1 to items amount in game manager
             gameObject.layer = LayerMask.NameToLayer("InvinciblePlayer");
             Destroy(this.gameObject, 8f);
-
-            return true;
         }
-        return false;
+    }
+
+    private void SetCollidersActive(bool value)
+    {
+        foreach (Collider part in _coll)
+            part.enabled = value;
+    }
+
+    public void Drop()
+    {
+        m_SourcePlayer = null;
+        m_Held = false;
+        m_Thrown = false;
+
+        transform.parent = null;
+        _rb.isKinematic = false;
+        SetCollidersActive(true);
     }
 }
