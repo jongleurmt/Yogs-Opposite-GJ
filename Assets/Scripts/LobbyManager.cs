@@ -32,7 +32,8 @@ public class LobbyManager : MonoBehaviour
     // Desyncs with the player manager.
     void OnDestroy()
     {
-        PlayerManager.Instance.OnPlayerJoined.RemoveListener(OnPlayerJoined);
+        if (PlayerManager.Instance != null)
+            PlayerManager.Instance.OnPlayerJoined.RemoveListener(OnPlayerJoined);
     }
 
     // Player joined function.

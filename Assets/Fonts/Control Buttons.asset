@@ -99,6 +99,30 @@ MonoBehaviour:
     m_Scale: 1
     m_Name: Button_West
     m_HashCode: -1770548740
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 4
+    m_Scale: 1
+    m_Name: Directional_Buttons
+    m_HashCode: -1043975982
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 5
+    m_Scale: 1
+    m_Name: Left_Shoulder
+    m_HashCode: 917551578
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 6
+    m_Scale: 1
+    m_Name: Left_Stick
+    m_HashCode: -67760286
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 7
+    m_Scale: 1
+    m_Name: Right_Shoulder
+    m_HashCode: -1957350943
   m_SpriteGlyphTable:
   - m_Index: 0
     m_Metrics:
@@ -109,7 +133,7 @@ MonoBehaviour:
       m_HorizontalAdvance: 512
     m_GlyphRect:
       m_X: 0
-      m_Y: 0
+      m_Y: 512
       m_Width: 512
       m_Height: 512
     m_Scale: 1
@@ -124,7 +148,7 @@ MonoBehaviour:
       m_HorizontalAdvance: 512
     m_GlyphRect:
       m_X: 512
-      m_Y: 0
+      m_Y: 512
       m_Width: 512
       m_Height: 512
     m_Scale: 1
@@ -139,7 +163,7 @@ MonoBehaviour:
       m_HorizontalAdvance: 512
     m_GlyphRect:
       m_X: 1024
-      m_Y: 0
+      m_Y: 512
       m_Width: 512
       m_Height: 512
     m_Scale: 1
@@ -154,11 +178,71 @@ MonoBehaviour:
       m_HorizontalAdvance: 512
     m_GlyphRect:
       m_X: 1536
-      m_Y: 0
+      m_Y: 512
       m_Width: 512
       m_Height: 512
     m_Scale: 1
     m_AtlasIndex: 0
     sprite: {fileID: -314252339527884366, guid: ca43b81aed4844aa081d204a4da8e8e4, type: 3}
+  - m_Index: 4
+    m_Metrics:
+      m_Width: 512
+      m_Height: 512
+      m_HorizontalBearingX: 32
+      m_HorizontalBearingY: 448
+      m_HorizontalAdvance: 512
+    m_GlyphRect:
+      m_X: 0
+      m_Y: 0
+      m_Width: 512
+      m_Height: 512
+    m_Scale: 1
+    m_AtlasIndex: 0
+    sprite: {fileID: -6619501556303774437, guid: ca43b81aed4844aa081d204a4da8e8e4, type: 3}
+  - m_Index: 5
+    m_Metrics:
+      m_Width: 512
+      m_Height: 512
+      m_HorizontalBearingX: 32
+      m_HorizontalBearingY: 448
+      m_HorizontalAdvance: 512
+    m_GlyphRect:
+      m_X: 1024
+      m_Y: 0
+      m_Width: 512
+      m_Height: 512
+    m_Scale: 1
+    m_AtlasIndex: 0
+    sprite: {fileID: 2214204463910956400, guid: ca43b81aed4844aa081d204a4da8e8e4, type: 3}
+  - m_Index: 6
+    m_Metrics:
+      m_Width: 512
+      m_Height: 512
+      m_HorizontalBearingX: 32
+      m_HorizontalBearingY: 448
+      m_HorizontalAdvance: 512
+    m_GlyphRect:
+      m_X: 512
+      m_Y: 0
+      m_Width: 512
+      m_Height: 512
+    m_Scale: 1
+    m_AtlasIndex: 0
+    sprite: {fileID: 2650684732943967179, guid: ca43b81aed4844aa081d204a4da8e8e4, type: 3}
+  - m_Index: 7
+    m_Metrics:
+      m_Width: 512
+      m_Height: 512
+      m_HorizontalBearingX: 32
+      m_HorizontalBearingY: 448
+      m_HorizontalAdvance: 512
+    m_GlyphRect:
+      m_X: 1536
+      m_Y: 0
+      m_Width: 512
+      m_Height: 512
+    m_Scale: 1
+    m_AtlasIndex: 0
+    sprite: {fileID: -7070269976957216007, guid: ca43b81aed4844aa081d204a4da8e8e4, type: 3}
   spriteInfoList: []
   fallbackSpriteAssets: []

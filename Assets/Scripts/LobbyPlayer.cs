@@ -26,6 +26,9 @@ public class LobbyPlayer : PlayerControllerBase
     [SerializeField]
     private ParticleSystem m_ParticleSystem;
 
+    [SerializeField]
+    private Light m_SpotLight;
+
     private AudioSource m_AudioSource;
 
     void Awake()
@@ -38,6 +41,8 @@ public class LobbyPlayer : PlayerControllerBase
         m_DefaultPosition = m_Rigidbody.position;
         m_DefaultRotation = m_Rigidbody.rotation;
         m_Rigidbody.isKinematic = true;
+
+        m_SpotLight.gameObject.SetActive(false);
 
         m_ReadyText.SetActive(false);
         m_RegisteredText.SetActive(false);
@@ -57,6 +62,8 @@ public class LobbyPlayer : PlayerControllerBase
         m_Rigidbody.MovePosition(m_DefaultPosition);
         m_Rigidbody.MoveRotation(m_DefaultRotation);
         m_ParticleSystem.Stop();
+
+        m_SpotLight.gameObject.SetActive(false);
 
         m_Rigidbody.isKinematic = true;
     }
@@ -98,6 +105,7 @@ public class LobbyPlayer : PlayerControllerBase
 
     public void Enable()
     {
+        m_SpotLight.gameObject.SetActive(true);
         m_Rigidbody.isKinematic = false;
         m_ReadyText.SetActive(false);
         m_RegisteredText.SetActive(true);
